@@ -21,8 +21,6 @@ import InfoIcon from '@mui/icons-material/Info';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 import CameraRollIcon from '@mui/icons-material/CameraRoll';
-import Grid from '@mui/material/Unstable_Grid2';
-import Grow from '@mui/material/Grow';
 
 export const primaryMain = '#5bcfae'
 export const secondaryMain = '#cf5b7c'
@@ -47,27 +45,29 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Box component="main"
-          sx={{p: 1,pt:2, mb: 8, height: '100%' }}>
-          <Typography variant='h6' sx={{fontWeight: '200'}}>
-            Photos by EngineerIt
-          </Typography>
-          <Outlet />
+        <Box sx={{width:'100%', display: 'flex'}}>
+          <Box component="main"
+            sx={{p: 1,pt:2, mb: 8, width:'100%'}}>
+            <Typography variant='h6' sx={{fontWeight: '200'}}>
+              Photos by EngineerIt
+            </Typography>
+            <Outlet />
+          </Box>
+          <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0}} elevation={5}>
+            <BottomNavigation
+              showLabels
+              value={tabValue}
+              onChange={(event, newValue: string) => {
+                setTabValue(newValue);
+                redirect("/" + newValue)
+              }}>
+              <BottomNavigationAction label="Main" value='/main' component={RouterLink} to="main" icon={<CameraRollIcon />} />
+              <BottomNavigationAction label="About" value='/about' component={RouterLink} to="about" icon={<InfoIcon />} />
+              <BottomNavigationAction label="Pricing" value='/pricing' component={RouterLink} to="pricing" icon={<PaymentsIcon />} />
+              <BottomNavigationAction label="Contact" value='/contact' component={RouterLink} to="contact" icon={<PermContactCalendarIcon />} />
+            </BottomNavigation>
+          </Paper>
         </Box>
-        <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={5}>
-          <BottomNavigation
-            showLabels
-            value={tabValue}
-            onChange={(event, newValue: string) => {
-              setTabValue(newValue);
-              redirect("/" + newValue)
-            }}>
-            <BottomNavigationAction label="Main" value='/main' component={RouterLink} to="main" icon={<CameraRollIcon />} />
-            <BottomNavigationAction label="About" value='/about' component={RouterLink} to="about" icon={<InfoIcon />} />
-            <BottomNavigationAction label="Pricing" value='/pricing' component={RouterLink} to="pricing" icon={<PaymentsIcon />} />
-            <BottomNavigationAction label="Contact" value='/contact' component={RouterLink} to="contact" icon={<PermContactCalendarIcon />} />
-          </BottomNavigation>
-        </Paper>
       </ThemeProvider>
     </>
   );

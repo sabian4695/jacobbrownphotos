@@ -15,7 +15,7 @@ export default function Pricing() {
     return (
         <>
             <Grid container spacing={3} sx={{p:1}}>
-                <Grid xs={12} sm={6}>
+                <Grid xs={12} sm={6} lg={4}>
                     <Grow
                         in={true}
                         {...({ timeout: 400 })}
@@ -47,7 +47,7 @@ export default function Pricing() {
                         </Paper>
                     </Grow>
                 </Grid>
-                <Grid xs={12} sm={6}>
+                <Grid xs={12} sm={6} lg={4}>
                     <Grow
                         in={true}
                         {...({ timeout: 400*2 })}
@@ -70,7 +70,7 @@ export default function Pricing() {
                         </Paper>
                     </Grow>
                 </Grid>
-                <Grid xs={12}>
+                <Grid xs={12} lg={4}>
                     <Grow
                         in={true}
                         {...({ timeout: 400*2 })}
@@ -88,16 +88,16 @@ export default function Pricing() {
                         </Paper>
                     </Grow>
                 </Grid>
-                <Grid xs={12}>
-                    <Grow
-                        in={true}
-                        {...({ timeout: 2000 })}
-                    >
-                        <Paper sx={{p:'1', textAlign:'center', height:'100%'}} elevation={0}>
-                            <Typography variant='caption' color='text.secondary'>website made by Jacob Brown</Typography>
-                        </Paper>
-                    </Grow>
-                </Grid>
+            </Grid>
+            <Grid xs={12}>
+                <Grow
+                    in={true}
+                    {...({ timeout: 2000 })}
+                >
+                    <Paper sx={{p:'1', textAlign:'center', height:'100%'}} elevation={0}>
+                        <Typography variant='caption' color='text.secondary'>website made by Jacob Brown</Typography>
+                    </Paper>
+                </Grow>
             </Grid>
         </>
     )

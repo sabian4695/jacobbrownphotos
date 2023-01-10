@@ -216,7 +216,7 @@ export default function Main() {
         <>
             <Grid container>
                 <Grid xs={12}>
-                    <ImageList sx={{ width: '100%', height: '100%' }} cols={small ? 3 : 2} variant="masonry">
+                    <ImageList sx={{ width: '100%'}} cols={small ? 3 : 2} variant="masonry">
                         {itemData.map((item) => (
                             <Grow
                                 in={true}
@@ -235,16 +235,16 @@ export default function Main() {
                         ))}
                     </ImageList>
                 </Grid>
-                <Grid xs={12}>
-                    <Grow
-                        in={true}
-                        {...({ timeout: 2000 })}
-                    >
-                        <Paper sx={{p:'1', textAlign:'center', height:'100%'}} elevation={0}>
-                            <Typography variant='caption' color='text.secondary'>website made by Jacob Brown</Typography>
-                        </Paper>
-                    </Grow>
-                </Grid>
+            </Grid>
+            <Grid xs={12}>
+                <Grow
+                    in={true}
+                    {...({ timeout: 2000 })}
+                >
+                    <Paper sx={{p:'1', textAlign:'center', height:'100%'}} elevation={0}>
+                        <Typography variant='caption' color='text.secondary'>website made by Jacob Brown</Typography>
+                    </Paper>
+                </Grow>
             </Grid>
       </>
     )

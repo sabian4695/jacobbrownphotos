@@ -10,6 +10,7 @@ import About from './components/About'
 import Pricing from './components/Pricing'
 import Contact from './components/Contact'
 import {RecoilRoot} from "recoil";
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -30,5 +31,5 @@ root.render(
       </RecoilRoot>
   </React.StrictMode>
 );
-
+serviceWorkerRegistration.register();
 reportWebVitals();

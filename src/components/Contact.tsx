@@ -9,7 +9,6 @@ import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import EmailIcon from '@mui/icons-material/Email';
 
 export default function Contact() {
-
     return (
         <>
             <Grid container spacing={3} sx={{p:1}}>
@@ -67,16 +66,16 @@ export default function Contact() {
                         </Paper>
                     </Grow>
                 </Grid>
-                <Grid xs={12}>
-                    <Grow
-                        in={true}
-                        {...({ timeout: 2000 })}
-                    >
-                        <Paper sx={{p:'1', textAlign:'center', height:'100%'}} elevation={0}>
-                            <Typography variant='caption' color='text.secondary'>website made by Jacob Brown</Typography>
-                        </Paper>
-                    </Grow>
-                </Grid>
+            </Grid>
+            <Grid xs={12}>
+                <Grow
+                    in={true}
+                    {...({ timeout: 2000 })}
+                >
+                    <Paper sx={{p:'1', textAlign:'center', height:'100%'}} elevation={0}>
+                        <Typography variant='caption' color='text.secondary'>website made by Jacob Brown</Typography>
+                    </Paper>
+                </Grow>
             </Grid>
         </>
     )

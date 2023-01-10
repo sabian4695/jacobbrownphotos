@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/photosbyengineerit/static/css/main.dffc864c.css",
-    "main.js": "/photosbyengineerit/static/js/main.761332f2.js",
+    "main.js": "/photosbyengineerit/static/js/main.2ca94fcb.js",
     "static/js/787.02719752.chunk.js": "/photosbyengineerit/static/js/787.02719752.chunk.js",
     "static/media/engage1.jpeg": "/photosbyengineerit/static/media/engage1.3f8d302fdec4b99d2990.jpeg",
     "static/media/general0.jpeg": "/photosbyengineerit/static/media/general0.a5f33302e70ed68e4dae.jpeg",
@@ -41,6 +41,7 @@
     "static/media/roboto-all-700-normal.woff": "/photosbyengineerit/static/media/roboto-all-700-normal.a457fde362a540fcadff.woff",
     "static/media/roboto-all-400-normal.woff": "/photosbyengineerit/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
     "static/media/roboto-all-300-normal.woff": "/photosbyengineerit/static/media/roboto-all-300-normal.168d6383e73339293ac3.woff",
+    "service-worker.js": "/photosbyengineerit/service-worker.js",
     "static/media/roboto-latin-500-normal.woff2": "/photosbyengineerit/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "/photosbyengineerit/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
     "static/media/roboto-latin-400-normal.woff2": "/photosbyengineerit/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
@@ -71,11 +72,11 @@
     "static/media/roboto-greek-ext-700-normal.woff2": "/photosbyengineerit/static/media/roboto-greek-ext-700-normal.bd9854c751441ccc1a70.woff2",
     "index.html": "/photosbyengineerit/index.html",
     "main.dffc864c.css.map": "/photosbyengineerit/static/css/main.dffc864c.css.map",
-    "main.761332f2.js.map": "/photosbyengineerit/static/js/main.761332f2.js.map",
+    "main.2ca94fcb.js.map": "/photosbyengineerit/static/js/main.2ca94fcb.js.map",
     "787.02719752.chunk.js.map": "/photosbyengineerit/static/js/787.02719752.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dffc864c.css",
-    "static/js/main.761332f2.js"
+    "static/js/main.2ca94fcb.js"
   ]
 }

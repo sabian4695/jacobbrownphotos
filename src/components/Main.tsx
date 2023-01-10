@@ -38,6 +38,9 @@ import portrait0 from '../photos/portrait0.jpeg'
 import Grow from '@mui/material/Grow';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Unstable_Grid2";
 
 const itemData = [
     {
@@ -211,24 +214,38 @@ export default function Main() {
 
     return (
         <>
-            <ImageList sx={{ width: '100%', height: '100%' }} cols={small ? 3 : 2} variant="masonry">
-            {itemData.map((item) => (
-                <Grow
-                    in={true}
-                    {...({ timeout: 1000 })}
-                    key={item.id}
-                >
-                  <ImageListItem key={item.id}>
-                      <img
-                          src={`${item.img}`}
-                          srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                          alt={item.title}
-                          loading="lazy"
-                      />
-                  </ImageListItem>
-                </Grow>
-            ))}
-          </ImageList>
+            <Grid container>
+                <Grid xs={12}>
+                    <ImageList sx={{ width: '100%', height: '100%' }} cols={small ? 3 : 2} variant="masonry">
+                        {itemData.map((item) => (
+                            <Grow
+                                in={true}
+                                {...({ timeout: 1000 })}
+                                key={item.id}
+                            >
+                                <ImageListItem key={item.id}>
+                                    <img
+                                        src={`${item.img}`}
+                                        srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                                        alt={item.title}
+                                        loading="lazy"
+                                    />
+                                </ImageListItem>
+                            </Grow>
+                        ))}
+                    </ImageList>
+                </Grid>
+                <Grid xs={12}>
+                    <Grow
+                        in={true}
+                        {...({ timeout: 2000 })}
+                    >
+                        <Paper sx={{p:'1', textAlign:'center', height:'100%'}} elevation={0}>
+                            <Typography variant='caption' color='text.secondary'>website made by Jacob Brown</Typography>
+                        </Paper>
+                    </Grow>
+                </Grid>
+            </Grid>
       </>
     )
 }

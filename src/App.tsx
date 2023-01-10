@@ -21,6 +21,8 @@ import InfoIcon from '@mui/icons-material/Info';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 import CameraRollIcon from '@mui/icons-material/CameraRoll';
+import Grid from '@mui/material/Unstable_Grid2';
+import Grow from '@mui/material/Grow';
 
 export const primaryMain = '#5bcfae'
 export const secondaryMain = '#cf5b7c'
@@ -46,12 +48,10 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Box component="main"
-          sx={{ width: '100%', p: 2, mb: 8, height: '100%' }}>
-          <Box>
-            <Typography variant='h5'>
-              Photos by Engineer It
-            </Typography>
-          </Box>
+          sx={{p: 1,pt:2, mb: 8, height: '100%' }}>
+          <Typography variant='h6' sx={{fontWeight: '200'}}>
+            Photos by EngineerIt
+          </Typography>
           <Outlet />
         </Box>
         <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={5}>

@@ -3,74 +3,232 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import engage0 from '../photos/engage0.jpeg'
 import engage1 from '../photos/engage1.jpeg'
+import engage2 from '../photos/engage2.jpeg'
+import engage3 from '../photos/engage3.jpeg'
+import engage4 from '../photos/engage4.jpeg'
+import engage5 from '../photos/engage5.jpeg'
+import engage6 from '../photos/engage6.jpeg'
+import engage7 from '../photos/engage7.jpeg'
+import family0 from '../photos/family0.jpeg'
+import family1 from '../photos/family1.jpeg'
+import family2 from '../photos/family2.jpeg'
+import family3 from '../photos/family3.jpeg'
+import family4 from '../photos/family4.jpeg'
+import family5 from '../photos/family5.jpeg'
+import family6 from '../photos/family6.jpeg'
+import family7 from '../photos/family7.jpeg'
+import family8 from '../photos/family8.jpeg'
+import family9 from '../photos/family9.jpeg'
+import family10 from '../photos/family10.jpeg'
+import general0 from '../photos/general0.jpeg'
+import general1 from '../photos/general1.jpeg'
+import general2 from '../photos/general2.jpeg'
+import general3 from '../photos/general3.jpeg'
+import general4 from '../photos/general4.jpeg'
+import general5 from '../photos/general5.jpeg'
+import general6 from '../photos/general6.jpeg'
+import general7 from '../photos/general7.jpeg'
+import graduate0 from '../photos/graduate0.jpeg'
+import graduate1 from '../photos/graduate1.jpeg'
+import graduate2 from '../photos/graduate2.jpeg'
+import graduate3 from '../photos/graduate3.jpeg'
+import headshot0 from '../photos/headshot0.jpeg'
+import headshot1 from '../photos/headshot1.jpeg'
+import portrait0 from '../photos/portrait0.jpeg'
+import Grow from '@mui/material/Grow';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const itemData = [
     {
       img: engage0,
-      title: 'Breakfast',
+      title: 'Engagement0',
+        id: 1,
     },
     {
       img: engage1,
-      title: 'Burger',
+      title: 'Engagement1',
+        id: 2,
     },
     {
-      img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-      title: 'Camera',
+      img: engage2,
+      title: 'Engagement2',
+        id: 3,
     },
     {
-      img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-      title: 'Coffee',
+      img: engage3,
+      title: 'Engagement3',
+        id: 4,
     },
     {
-      img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-      title: 'Hats',
+      img: engage4,
+      title: 'Engagement4',
+        id: 5,
     },
     {
-      img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-      title: 'Honey',
+      img: engage5,
+      title: 'Engagement5',
+        id: 6,
     },
     {
-      img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-      title: 'Basketball',
+      img: engage6,
+      title: 'Engagement6',
+        id: 7,
     },
     {
-      img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-      title: 'Fern',
+      img: engage7,
+      title: 'Engagement7',
+        id: 8,
     },
     {
-      img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-      title: 'Mushrooms',
+      img: family0,
+      title: 'Family0',
+        id: 9,
     },
     {
-      img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-      title: 'Tomato basil',
+      img: family1,
+      title: 'Family1',
+        id: 10,
     },
     {
-      img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-      title: 'Sea star',
+      img: family2,
+      title: 'Family2',
+        id: 11,
     },
     {
-      img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-      title: 'Bike',
+      img: family3,
+      title: 'Family3',
+        id: 12,
     },
+    {
+        img: family4,
+        title: 'Family4',
+        id: 13,
+    },
+    {
+        img: family5,
+        title: 'Family5',
+        id: 14,
+    },
+    {
+        img: family6,
+        title: 'Family6',
+        id: 15,
+    },
+    {
+        img: family7,
+        title: 'Family7',
+        id: 16,
+    },
+    {
+        img: family8,
+        title: 'Family8',
+        id: 17,
+    },
+    {
+        img: family9,
+        title: 'Family9',
+        id: 18,
+    },
+    {
+        img: family10,
+        title: 'Family10',
+        id: 19,
+    },
+    {
+        img: general0,
+        title: 'General0',
+        id: 20,
+    },
+    {
+        img: general1,
+        title: 'General1',
+        id: 21,
+    },
+    {
+        img: general2,
+        title: 'General2',
+        id: 22,
+    },
+    {
+        img: general3,
+        title: 'General3',
+        id: 23,
+    },
+    {
+        img: general4,
+        title: 'General4',
+        id: 24,
+    },
+    {
+        img: general5,
+        title: 'General5',
+        id: 25,
+    },{
+        img: general6,
+        title: 'General6',
+        id: 26,
+    },{
+        img: general7,
+        title: 'General7',
+        id: 27,
+    },{
+        img: graduate0,
+        title: 'Graduate0',
+        id: 28,
+    },{
+        img: graduate1,
+        title: 'Graduate1',
+        id: 29,
+    },{
+        img: graduate2,
+        title: 'Graduate2',
+        id: 30,
+    },{
+        img: graduate3,
+        title: 'Graduate3',
+        id: 31,
+    },{
+        img: headshot0,
+        title: 'Headshot0',
+        id: 32,
+    },{
+        img: headshot1,
+        title: 'Headshot1',
+        id: 33,
+    },{
+        img: portrait0,
+        title: 'Portrait0',
+        id: 34,
+    },
+
+
   ];
 
 export default function Main() {
+    const theme = useTheme();
+    const small = useMediaQuery(theme.breakpoints.up('sm'));
 
     return (
         <>
-        <ImageList sx={{ width: '100%', height: '100%' }} cols={3}>
-        {itemData.map((item) => (
-          <ImageListItem key={item.img}>
-            <img
-              src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-              srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-              alt={item.title}
-              loading="lazy"
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
+            <ImageList sx={{ width: '100%', height: '100%' }} cols={small ? 3 : 2} variant="masonry">
+            {itemData.map((item) => (
+                <Grow
+                    in={true}
+                    {...({ timeout: 1000 })}
+                    key={item.id}
+                >
+                  <ImageListItem key={item.id}>
+                      <img
+                          src={`${item.img}`}
+                          srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                          alt={item.title}
+                          loading="lazy"
+                      />
+                  </ImageListItem>
+                </Grow>
+            ))}
+          </ImageList>
       </>
     )
 }

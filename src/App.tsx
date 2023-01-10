@@ -17,13 +17,13 @@ import '@fontsource/roboto/700.css';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
+import CameraRollIcon from '@mui/icons-material/CameraRoll';
 
-export const primaryMain = '#4c809e'
-export const secondaryMain = '#d68758'
+export const primaryMain = '#5bcfae'
+export const secondaryMain = '#cf5b7c'
 
 const theme = createTheme({
   palette: {
@@ -62,7 +62,7 @@ function App() {
               setTabValue(newValue);
               redirect("/" + newValue)
             }}>
-            <BottomNavigationAction label="Main" value='/main' component={RouterLink} to="main" icon={<HomeIcon />} />
+            <BottomNavigationAction label="Main" value='/main' component={RouterLink} to="main" icon={<CameraRollIcon />} />
             <BottomNavigationAction label="About" value='/about' component={RouterLink} to="about" icon={<InfoIcon />} />
             <BottomNavigationAction label="Pricing" value='/pricing' component={RouterLink} to="pricing" icon={<PaymentsIcon />} />
             <BottomNavigationAction label="Contact" value='/contact' component={RouterLink} to="contact" icon={<PermContactCalendarIcon />} />

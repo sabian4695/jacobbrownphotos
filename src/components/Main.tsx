@@ -6,9 +6,6 @@ import engage1 from '../photos/engage1.jpeg'
 import engage2 from '../photos/engage2.jpeg'
 import engage3 from '../photos/engage3.jpeg'
 import engage4 from '../photos/engage4.jpeg'
-import engage5 from '../photos/engage5.jpeg'
-import engage6 from '../photos/engage6.jpeg'
-import engage7 from '../photos/engage7.jpeg'
 import family0 from '../photos/family0.jpeg'
 import family1 from '../photos/family1.jpeg'
 import family2 from '../photos/family2.jpeg'
@@ -26,8 +23,6 @@ import general2 from '../photos/general2.jpeg'
 import general3 from '../photos/general3.jpeg'
 import general4 from '../photos/general4.jpeg'
 import general5 from '../photos/general5.jpeg'
-import general6 from '../photos/general6.jpeg'
-import general7 from '../photos/general7.jpeg'
 import graduate0 from '../photos/graduate0.jpeg'
 import graduate1 from '../photos/graduate1.jpeg'
 import graduate2 from '../photos/graduate2.jpeg'
@@ -67,21 +62,6 @@ const itemData = [
       img: engage4,
       title: 'Engagement4',
         id: 5,
-    },
-    {
-      img: engage5,
-      title: 'Engagement5',
-        id: 6,
-    },
-    {
-      img: engage6,
-      title: 'Engagement6',
-        id: 7,
-    },
-    {
-      img: engage7,
-      title: 'Engagement7',
-        id: 8,
     },
     {
       img: family0,
@@ -167,15 +147,7 @@ const itemData = [
         img: general5,
         title: 'General5',
         id: 25,
-    },{
-        img: general6,
-        title: 'General6',
-        id: 26,
-    },{
-        img: general7,
-        title: 'General7',
-        id: 27,
-    },{
+    }, {
         img: graduate0,
         title: 'Graduate0',
         id: 28,

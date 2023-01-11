@@ -21,9 +21,10 @@ import InfoIcon from '@mui/icons-material/Info';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 import CameraRollIcon from '@mui/icons-material/CameraRoll';
+import { HashLink } from 'react-router-hash-link';
 
-export const primaryMain = '#5bcfae'
-export const secondaryMain = '#cf5b7c'
+export const primaryMain = '#679bac'
+export const secondaryMain = '#648777'
 
 const theme = createTheme({
   palette: {
@@ -39,8 +40,8 @@ const theme = createTheme({
 
 function App() {
   let location = useLocation();
-  const [tabValue, setTabValue] = React.useState(location.pathname);
-  if (location.pathname === '/') { return <Navigate to="/main" /> }
+  const [tabValue, setTabValue] = React.useState(location.pathname)
+  if (location.pathname === '/') { return <Navigate to="/gallery" /> }
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -58,13 +59,18 @@ function App() {
               showLabels
               value={tabValue}
               onChange={(event, newValue: string) => {
+                if (newValue === '/pricing' || newValue === '/contact') {
+                  newValue = '/about'
+                }
                 setTabValue(newValue);
-                redirect("/" + newValue)
+                if (newValue === '/about') {
+                  window.scrollTo(0, 0);
+                }
               }}>
-              <BottomNavigationAction label="Main" value='/main' component={RouterLink} to="main" icon={<CameraRollIcon />} />
+              <BottomNavigationAction label="Gallery" value='/gallery' component={RouterLink} to="gallery" icon={<CameraRollIcon />} />
               <BottomNavigationAction label="About" value='/about' component={RouterLink} to="about" icon={<InfoIcon />} />
-              <BottomNavigationAction label="Pricing" value='/pricing' component={RouterLink} to="pricing" icon={<PaymentsIcon />} />
-              <BottomNavigationAction label="Contact" value='/contact' component={RouterLink} to="contact" icon={<PermContactCalendarIcon />} />
+              <BottomNavigationAction label="Pricing" value='/pricing' component={HashLink} to={"/about#pricing"} icon={<PaymentsIcon />} />
+              <BottomNavigationAction label="Contact" value='/contact' component={HashLink} to={"/about#contact"} icon={<PermContactCalendarIcon />} />
             </BottomNavigation>
           </Paper>
         </Box>

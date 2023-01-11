@@ -5,10 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import ErrorPage from './components/ErrorPage'
-import Main from './components/Main'
+import Gallery from './components/Gallery'
 import About from './components/About'
-import Pricing from './components/Pricing'
-import Contact from './components/Contact'
 import {RecoilRoot} from "recoil";
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
@@ -21,10 +19,8 @@ root.render(
           <BrowserRouter basename="/photosbyengineerit">
               <Routes>
                   <Route path='/' errorElement={<ErrorPage/>} element={<App/>}>
-                      <Route path='main' element={<Main/>}/>
+                      <Route path='gallery' element={<Gallery/>}/>
                       <Route path='about' element={<About/>}/>
-                      <Route path='pricing' element={<Pricing/>}/>
-                      <Route path='contact' element={<Contact/>}/>
                   </Route>
               </Routes>
           </BrowserRouter>

@@ -180,7 +180,7 @@ const itemData = [
 
   ];
 
-export default function Main() {
+export default function Gallery() {
     const theme = useTheme();
     const small = useMediaQuery(theme.breakpoints.up('sm'));
 

@@ -9,7 +9,6 @@ import headshot0 from '../photos/headshot0.jpeg'
 import Chip from '@mui/material/Chip';
 import EmailIcon from "@mui/icons-material/Email";
 import Button from "@mui/material/Button";
-import {useRecoilState} from "recoil";
 import Stack from "@mui/material/Stack";
 import WorkIcon from "@mui/icons-material/Work";
 import Avatar from "@mui/material/Avatar";
@@ -18,14 +17,50 @@ import GroupIcon from "@mui/icons-material/Group";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import Divider from '@mui/material/Divider';
 import {CardContent} from "@mui/material";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import CakeIcon from '@mui/icons-material/Cake';
+import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
+import FestivalIcon from '@mui/icons-material/Festival';
+import PetsIcon from '@mui/icons-material/Pets';
+import ChildFriendlyIcon from '@mui/icons-material/ChildFriendly';
+import BlurOnIcon from '@mui/icons-material/BlurOn';
+import CategoryIcon from '@mui/icons-material/Category';
+import {useRecoilState, useSetRecoilState} from "recoil";
+import {currentPhoto, filterVal, lightboxOpen, photos} from "../recoil/atoms";
+import {itemData} from "./allPhotos";
 
 const titles = 'primary.dark'
 
 export default function About() {
+    const [openModal, setOpenModal] = useRecoilState(lightboxOpen)
+    const [filtVal, setFiltValue] = useRecoilState(filterVal)
+    const [photosList, setPhotosList] = useRecoilState(photos)
+    const setCurPhoto = useSetRecoilState(currentPhoto)
+    function chipClick(title: string) {
+        setFiltValue(title)
+        setOpenModal(true)
+    }
+    React.useEffect(() => {
+        if(filtVal !== '') {
+            let shuffled = itemData
+                .map(value => ({value, sort: Math.random()}))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({value}) => value)
+                .filter(x => x.category === filtVal)
+            setPhotosList(shuffled)
+        } else {
+            let shuffled = itemData
+                .map(value => ({value, sort: Math.random()}))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({value}) => value)
+            setPhotosList(shuffled)
+        }
+        setCurPhoto(0)
+    }, [filtVal])
     return (
         <>
             <Grid container spacing={2} sx={{m:1}}>
-                <Grid xs={12} md={4}>
+                <Grid xs={12} md={6} lg={4} sx={{mb:3}}>
                     <Grow
                         in={true}
                         {...({ timeout: 400 })}
@@ -42,18 +77,36 @@ export default function About() {
                                         Hi! My name is Jacob.
                                     </Typography>
                                     <Typography variant='body1' color='text.secondary'>
-                                        I've dabbled in photography for years
-                                        as a hobby, but now I'm doing it part time.
+                                        I've always loved capturing moments in my life. There's nothing like looking at beautiful photos from years back, especially of your loved ones.
                                     </Typography>
                                     <Typography variant='body1' color='text.secondary'>
-                                        I don't have a crazy portfolio or years of professional experience - but my rates reflect this.
+                                        I started photography on a professional level so I can help you have these things as well.
+                                    </Typography>
+                                    <Typography variant='body1' color='text.secondary'>
+                                        Though I've taken photos my whole life, I'm just starting out professionally. So, for a short time my rates will seem pretty low to most.
+                                    </Typography>
+                                    <Typography variant='body2' color='text.secondary'>
+                                        p.s. I also love videography, so feel free to reach out to me if you have any needs in this area.
                                     </Typography>
                                     <div>
                                         <Typography variant='body1' sx={{ fontWeight: '600'}} color='text.secondary'>
                                             locations:
                                         </Typography>
-                                        <Chip color='secondary' label='Canal Winchester' sx={{mr:1}}/>
-                                        <Chip color='secondary' label='Pickerington'/>
+                                        <Chip
+                                            clickable
+                                            component='a'
+                                            href='https://goo.gl/maps/TEt1tz22ZZFeGAnS8'
+                                            target='blank'
+                                            color='secondary'
+                                            label='Canal Winchester'
+                                            sx={{mr:1}}/>
+                                        <Chip
+                                            clickable
+                                            component='a'
+                                            target='blank'
+                                            href='https://goo.gl/maps/uTXtgAcmXNW39pXT7'
+                                            color='secondary'
+                                            label='Pickerington'/>
                                     </div>
                                     <div>
                                         <Typography display='inline'>
@@ -77,8 +130,28 @@ export default function About() {
                         </Card>
                     </Grow>
                 </Grid>
-                <Grid xs={12} md={8} sx={{my:4}} alignSelf='center'>
+                <Grid xs={12} md={6} lg={8}>
                     <Stack spacing={5}>
+                        <Stack spacing={1} id='styling'>
+                            <Grow
+                                in={true}
+                                {...({ timeout: 400 })}
+                            >
+                                <Paper elevation={3} sx={{p:1, borderRadius:'15px'}}>
+                                    <Typography variant='h5' sx={{ fontWeight: '600'}} color={titles}>
+                                        Styling
+                                    </Typography>
+                                    <Typography variant='subtitle1' sx={{ fontWeight: '400'}} id='pricing' color='text.secondary'>
+                                        clean / natural
+                                    </Typography>
+                                    <Typography variant='body1' color='text.secondary'>
+                                        You may notice my style isn't flashy or highly edited. My preference is capturing moments as they are.
+                                        This means lots of prep/setup, color correcting, and some general editing afterward.
+                                        You can expect a turnaround of 2-5 days depending on number of photos and complexity.
+                                    </Typography>
+                                </Paper>
+                            </Grow>
+                        </Stack>
                         <Stack spacing={1} id='pricing'>
                             <Grow
                                 in={true}
@@ -88,41 +161,155 @@ export default function About() {
                                     <Typography variant='h5' sx={{ fontWeight: '600'}} color={titles}>
                                         Pricing
                                     </Typography>
-                                    <Stack spacing={1}>
-                                        <Typography variant='subtitle1' sx={{ fontWeight: '400'}} id='pricing' color='text.secondary'>
-                                            Individual Sessions
-                                        </Typography>
-                                        <Stack direction="row" spacing={2} justifyContent='space-between' alignItems='center'>
-                                            <Chip
-                                                  color='secondary'
-                                                  label="professional headshot"
-                                                  icon={<WorkIcon />}/>
-                                                <Avatar sx={{ bgcolor: 'secondary.main', width: 50, height: 50 }}>$75</Avatar>
+                                    <Stack spacing={0}>
+                                        <Stack direction="row" justifyContent='space-between' alignItems='center'>
+                                            <Typography variant='subtitle1' sx={{ fontWeight: '400'}} id='pricing' color='text.secondary'>
+                                                Individuals
+                                            </Typography>
+                                            <Stack direction='row' alignItems='center' spacing={1}>
+                                                <Typography variant='body2' sx={{ fontWeight: '400'}} id='pricing' color='text.disabled'>
+                                                    starting at
+                                                </Typography>
+                                                <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$150</Avatar>
+                                            </Stack>
                                         </Stack>
-                                        <Stack direction="row" spacing={2} justifyContent='space-between' alignItems='center'>
-                                            <Chip
-                                                  color='secondary'
-                                                  label="senior / general portraits"
-                                                  icon={<FaceIcon />}/>
-                                            <Avatar sx={{ bgcolor: 'secondary.main', width: 50, height: 50 }}>$150</Avatar>
-                                        </Stack>
+                                        <Grid container direction='row' spacing={1}>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('baby')}
+                                                    clickable
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="baby photos"
+                                                    icon={<ChildFriendlyIcon />}/>
+                                            </Grid>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('pet')}
+                                                    clickable
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="pet photos"
+                                                    icon={<PetsIcon />}/>
+                                            </Grid>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('portrait')}
+                                                    clickable
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="senior / general portraits"
+                                                    icon={<FaceIcon />}/>
+                                            </Grid>
+                                        </Grid>
                                     </Stack>
                                     <Divider sx={{my:1}}/>
-                                    <Stack spacing={1}>
-                                        <Typography variant='subtitle1' sx={{ fontWeight: '400'}} id='pricing' color='text.secondary'>
-                                            Group Sessions
-                                        </Typography>
-                                        <Stack direction="row" spacing={2} justifyContent='space-between' alignItems='center'>
-                                            <Chip
-                                                  color='secondary'
-                                                  label="family / group photos"
-                                                  icon={<GroupIcon />}/>
-                                            <Avatar sx={{ bgcolor: 'secondary.main', width: 50, height: 50 }}>$175</Avatar>
+                                    <Stack spacing={0}>
+                                        <Stack direction="row" justifyContent='space-between' alignItems='center'>
+                                            <Typography variant='subtitle1' sx={{ fontWeight: '400'}} id='pricing' color='text.secondary'>
+                                                Groups
+                                            </Typography>
+                                            <Stack direction='row' alignItems='center' spacing={1}>
+                                                <Typography variant='body2' sx={{ fontWeight: '400'}} id='pricing' color='text.disabled'>
+                                                    starting at
+                                                </Typography>
+                                                <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$200</Avatar>
+                                            </Stack>
                                         </Stack>
+                                        <Grid container direction='row' spacing={1}>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('family')}
+                                                    clickable
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="family photos"
+                                                    icon={<FamilyRestroomIcon />}/>
+                                            </Grid>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('engagement')}
+                                                    clickable
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="engagement photos"
+                                                    icon={<FavoriteIcon />}/>
+                                            </Grid>
+                                        </Grid>
                                     </Stack>
-                                    <Typography variant='body2' sx={{mt:1}} color='text.disabled'>
-                                        prices are starting rates
-                                    </Typography>
+                                    <Divider sx={{my:1}}/>
+                                    <Stack spacing={0}>
+                                        <Stack direction="row" justifyContent='space-between' alignItems='center'>
+                                            <Typography variant='subtitle1' sx={{ fontWeight: '400'}} id='pricing' color='text.secondary'>
+                                                Events
+                                            </Typography>
+                                            <Stack direction='row' alignItems='center' spacing={1}>
+                                                <Typography variant='body2' sx={{ fontWeight: '400'}} id='pricing' color='text.disabled'>
+                                                    starting at
+                                                </Typography>
+                                                <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$700</Avatar>
+                                            </Stack>
+                                        </Stack>
+                                        <Grid container direction='row' spacing={1}>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="small wedding/elopement"
+                                                    icon={<CakeIcon />}/>
+                                            </Grid>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="event photos"
+                                                    icon={<FestivalIcon />}/>
+                                            </Grid>
+                                        </Grid>
+                                    </Stack>
+                                    <Divider sx={{my:1}}/>
+                                    <Stack spacing={0}>
+                                        <Stack direction="row" justifyContent='space-between' alignItems='center'>
+                                            <Typography variant='subtitle1' sx={{ fontWeight: '400'}} id='pricing' color='text.secondary'>
+                                                Other
+                                            </Typography>
+                                            <Stack direction='row' alignItems='center' spacing={1}>
+                                                <Typography variant='body2' sx={{ fontWeight: '400'}} id='pricing' color='text.disabled'>
+                                                    starting at
+                                                </Typography>
+                                                <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$100</Avatar>
+                                            </Stack>
+                                        </Stack>
+                                        <Grid container direction='row' spacing={1}>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('headshot')}
+                                                    clickable
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="professional headshot"
+                                                    icon={<WorkIcon />}/>
+                                            </Grid>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('product')}
+                                                    clickable
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="product photos"
+                                                    icon={<CategoryIcon />}/>
+                                            </Grid>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('general')}
+                                                    clickable
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="Other - let's talk!"
+                                                    icon={<BlurOnIcon />}/>
+                                            </Grid>
+                                        </Grid>
+                                    </Stack>
                                 </Paper>
                             </Grow>
                         </Stack>
@@ -141,7 +328,7 @@ export default function About() {
                                         fullWidth
                                         disableElevation
                                         variant='contained'
-                                        href="tel:6145821480"
+                                        href="tel:6148595782"
                                         endIcon={<PhoneAndroidIcon />}
                                     >
                                         (614) 859-5782

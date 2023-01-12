@@ -1,210 +1,98 @@
 import React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import engage0 from '../photos/engage0.jpeg'
-import engage1 from '../photos/engage1.jpeg'
-import engage2 from '../photos/engage2.jpeg'
-import engage3 from '../photos/engage3.jpeg'
-import engage4 from '../photos/engage4.jpeg'
-import family0 from '../photos/family0.jpeg'
-import family1 from '../photos/family1.jpeg'
-import family2 from '../photos/family2.jpeg'
-import family3 from '../photos/family3.jpeg'
-import family4 from '../photos/family4.jpeg'
-import family5 from '../photos/family5.jpeg'
-import family6 from '../photos/family6.jpeg'
-import family7 from '../photos/family7.jpeg'
-import family8 from '../photos/family8.jpeg'
-import family9 from '../photos/family9.jpeg'
-import family10 from '../photos/family10.jpeg'
-import general0 from '../photos/general0.jpeg'
-import general1 from '../photos/general1.jpeg'
-import general2 from '../photos/general2.jpeg'
-import general3 from '../photos/general3.jpeg'
-import general4 from '../photos/general4.jpeg'
-import general5 from '../photos/general5.jpeg'
-import graduate0 from '../photos/graduate0.jpeg'
-import graduate1 from '../photos/graduate1.jpeg'
-import graduate2 from '../photos/graduate2.jpeg'
-import graduate3 from '../photos/graduate3.jpeg'
-import headshot0 from '../photos/headshot0.jpeg'
-import headshot1 from '../photos/headshot1.jpeg'
-import portrait0 from '../photos/portrait0.jpeg'
 import Grow from '@mui/material/Grow';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
-
-const itemData = [
-    {
-      img: engage0,
-      title: 'Engagement0',
-        id: 1,
-    },
-    {
-      img: engage1,
-      title: 'Engagement1',
-        id: 2,
-    },
-    {
-      img: engage2,
-      title: 'Engagement2',
-        id: 3,
-    },
-    {
-      img: engage3,
-      title: 'Engagement3',
-        id: 4,
-    },
-    {
-      img: engage4,
-      title: 'Engagement4',
-        id: 5,
-    },
-    {
-      img: family0,
-      title: 'Family0',
-        id: 9,
-    },
-    {
-      img: family1,
-      title: 'Family1',
-        id: 10,
-    },
-    {
-      img: family2,
-      title: 'Family2',
-        id: 11,
-    },
-    {
-      img: family3,
-      title: 'Family3',
-        id: 12,
-    },
-    {
-        img: family4,
-        title: 'Family4',
-        id: 13,
-    },
-    {
-        img: family5,
-        title: 'Family5',
-        id: 14,
-    },
-    {
-        img: family6,
-        title: 'Family6',
-        id: 15,
-    },
-    {
-        img: family7,
-        title: 'Family7',
-        id: 16,
-    },
-    {
-        img: family8,
-        title: 'Family8',
-        id: 17,
-    },
-    {
-        img: family9,
-        title: 'Family9',
-        id: 18,
-    },
-    {
-        img: family10,
-        title: 'Family10',
-        id: 19,
-    },
-    {
-        img: general0,
-        title: 'General0',
-        id: 20,
-    },
-    {
-        img: general1,
-        title: 'General1',
-        id: 21,
-    },
-    {
-        img: general2,
-        title: 'General2',
-        id: 22,
-    },
-    {
-        img: general3,
-        title: 'General3',
-        id: 23,
-    },
-    {
-        img: general4,
-        title: 'General4',
-        id: 24,
-    },
-    {
-        img: general5,
-        title: 'General5',
-        id: 25,
-    }, {
-        img: graduate0,
-        title: 'Graduate0',
-        id: 28,
-    },{
-        img: graduate1,
-        title: 'Graduate1',
-        id: 29,
-    },{
-        img: graduate2,
-        title: 'Graduate2',
-        id: 30,
-    },{
-        img: graduate3,
-        title: 'Graduate3',
-        id: 31,
-    },{
-        img: headshot0,
-        title: 'Headshot0',
-        id: 32,
-    },{
-        img: headshot1,
-        title: 'Headshot1',
-        id: 33,
-    },{
-        img: portrait0,
-        title: 'Portrait0',
-        id: 34,
-    },
-
-
-  ];
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import {currentPhoto, lightboxOpen, photos, filterVal} from "../recoil/atoms";
+import {useRecoilState, useSetRecoilState} from "recoil";
+import {itemData} from "./allPhotos";
 
 export default function Gallery() {
     const theme = useTheme();
     const small = useMediaQuery(theme.breakpoints.up('sm'));
+    const setOpenModal = useSetRecoilState(lightboxOpen)
+    const setCurPhoto = useSetRecoilState(currentPhoto)
+    const [filtVal, setFiltValue] = useRecoilState(filterVal)
+    const [photosList, setPhotosList] = useRecoilState(photos)
 
+    React.useEffect(() => {
+        if(filtVal !== '') {
+            let shuffled = itemData
+                .map(value => ({value, sort: Math.random()}))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({value}) => value)
+                .filter(x => x.category === filtVal)
+            setPhotosList(shuffled)
+        } else {
+            let shuffled = itemData
+                .map(value => ({value, sort: Math.random()}))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({value}) => value)
+            setPhotosList(shuffled)
+        }
+        setCurPhoto(0)
+    }, [filtVal])
+
+    function openImage(id: number) {
+        setCurPhoto(id)
+        setOpenModal(true)
+    }
     return (
         <>
             <Grid container>
                 <Grid xs={12}>
+                    <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                        <InputLabel id="demo-simple-select-standard-label">Filter</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-standard-label"
+                            id="demo-simple-select-standard"
+                            value={filtVal}
+                            onChange={(event: SelectChangeEvent) => setFiltValue(event.target.value)}
+                            label="Age"
+                        >
+                            <MenuItem value=''>
+                                <em>None</em>
+                            </MenuItem>
+                            <MenuItem value={'engagement'}>Engagement</MenuItem>
+                            <MenuItem value={'family'}>Family</MenuItem>
+                            <MenuItem value={'portrait'}>Portrait</MenuItem>
+                            <MenuItem value={'baby'}>Baby</MenuItem>
+                            <MenuItem value={'pet'}>Pet</MenuItem>
+                            <MenuItem value={'food'}>Food</MenuItem>
+                            <MenuItem value={'headshot'}>Headshots</MenuItem>
+                            <MenuItem value={'general'}>General</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Grid>
+                <Grid xs={12}>
                     <ImageList sx={{ width: '100%'}} cols={small ? 3 : 2} variant="masonry">
-                        {itemData.map((item) => (
-                            <Grow
-                                in={true}
-                                {...({ timeout: 1000 })}
-                                key={item.id}
-                            >
-                                <ImageListItem key={item.id}>
-                                    <img
-                                        src={`${item.img}`}
-                                        srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                                        alt={item.title}
-                                        loading="lazy"
-                                    />
-                                </ImageListItem>
-                            </Grow>
-                        ))}
+                        {/*//@ts-ignore*/}
+                        {photosList.map((item, index) => (
+                                    <Grow
+                                        in={true}
+                                        {...({ timeout: 1000 })}
+                                        key={item.title}
+                                    >
+                                        <ImageListItem key={item.title}>
+                                            <img
+                                                style={{cursor:'pointer'}}
+                                                onClick={() => openImage(index)}
+                                                src={`${item.img}`}
+                                                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                                                alt={item.title}
+                                                loading="lazy"
+                                            />
+                                        </ImageListItem>
+                                    </Grow>
+                                ))}
                     </ImageList>
                 </Grid>
             </Grid>
@@ -218,6 +106,6 @@ export default function Gallery() {
                     </Paper>
                 </Grow>
             </Grid>
-      </>
+        </>
     )
 }

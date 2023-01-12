@@ -1,12 +1,10 @@
 import React from 'react';
 import './App.css';
-import { redirect, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import {
   Link as RouterLink,
 } from 'react-router-dom';
 import { Navigate, Outlet } from "react-router-dom";
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import { createTheme } from "@mui/material/styles";
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
@@ -15,16 +13,18 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import InfoIcon from '@mui/icons-material/Info';
-import PaymentsIcon from '@mui/icons-material/Payments';
-import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 import CameraRollIcon from '@mui/icons-material/CameraRoll';
-import { HashLink } from 'react-router-hash-link';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Button from '@mui/material/Button';
+import logo from './logo.png'
+import Lightbox from "./components/Lightbox";
 
 export const primaryMain = '#679bac'
 export const secondaryMain = '#648777'
+export const primaryRGB = '103, 155, 172'
 
 const theme = createTheme({
   palette: {
@@ -40,40 +40,43 @@ const theme = createTheme({
 
 function App() {
   let location = useLocation();
-  const [tabValue, setTabValue] = React.useState(location.pathname)
   if (location.pathname === '/') { return <Navigate to="/gallery" /> }
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Box sx={{width:'100%', display: 'flex'}}>
-          <Box component="main"
-            sx={{p: 1,pt:2, mb: 8, width:'100%'}}>
-            <Typography variant='h6' sx={{fontWeight: '200'}}>
-              Photos by EngineerIt
+        <AppBar component="nav" sx={{backgroundColor:'background.paper', color:'primary.main'}}>
+          <Toolbar>
+            <img
+                height='30'
+                src={logo}
+                srcSet={`${logo}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                alt='logo'
+                loading="lazy"
+            />
+            <Typography
+                variant="h6"
+                component="div"
+                sx={{fontWeight: '200', flexGrow: 1, ml:0.5}}
+            >
+              photos
             </Typography>
+            <Box sx={{flexGrow:1}}>
+              <Button sx={{mr:1}} component={RouterLink} to="gallery" startIcon={<CameraRollIcon />}>
+                Gallery
+              </Button>
+              <Button component={RouterLink} to="about" startIcon={<InfoIcon />}>
+                About
+              </Button>
+            </Box>
+          </Toolbar>
+        </AppBar>
+          <Box component="main"
+            sx={{p: 1, width:'100%'}}>
+            <Toolbar/>
             <Outlet />
           </Box>
-          <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0}} elevation={5}>
-            <BottomNavigation
-              showLabels
-              value={tabValue}
-              onChange={(event, newValue: string) => {
-                if (newValue === '/pricing' || newValue === '/contact') {
-                  newValue = '/about'
-                }
-                setTabValue(newValue);
-                if (newValue === '/about') {
-                  window.scrollTo(0, 0);
-                }
-              }}>
-              <BottomNavigationAction label="Gallery" value='/gallery' component={RouterLink} to="gallery" icon={<CameraRollIcon />} />
-              <BottomNavigationAction label="About" value='/about' component={RouterLink} to="about" icon={<InfoIcon />} />
-              <BottomNavigationAction label="Pricing" value='/pricing' component={HashLink} to={"/about#pricing"} icon={<PaymentsIcon />} />
-              <BottomNavigationAction label="Contact" value='/contact' component={HashLink} to={"/about#contact"} icon={<PermContactCalendarIcon />} />
-            </BottomNavigation>
-          </Paper>
-        </Box>
+        <Lightbox/>
       </ThemeProvider>
     </>
   );

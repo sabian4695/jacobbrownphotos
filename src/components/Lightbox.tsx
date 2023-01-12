@@ -1,0 +1,69 @@
+import React from 'react';
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import Backdrop from "@mui/material/Backdrop";
+import {useRecoilState} from "recoil";
+import {currentPhoto, filterVal, lightboxOpen, photos} from "../recoil/atoms";
+
+export default function Lightbox() {
+    const [openModal, setOpenModal] = useRecoilState(lightboxOpen)
+    const [curPhoto, setCurPhoto] = useRecoilState(currentPhoto)
+    const [photosList, setPhotosList] = useRecoilState(photos)
+    const [filtVal, setFiltValue] = useRecoilState(filterVal)
+    return (
+        <>
+            <Backdrop
+                open={openModal}
+                sx={{zIndex:1200, backgroundColor:'rgba(12,12,12,0.91)'}}
+            >
+                <IconButton
+                    sx={{position:'fixed',
+                        right:5,
+                        top:5,
+                        color: '#FFFFFF',
+                        backgroundColor:'rgba(162,122,122,0.73)',
+                        "&:hover": { backgroundColor: "error.main" }}}
+                    onClick={() => setOpenModal(false)}
+                >
+                    <CloseIcon/>
+                </IconButton>
+                <IconButton
+                    disabled={curPhoto === 0}
+                    sx={{position:'fixed',
+                        left:5,
+                        top:'50%',
+                        color: '#FFFFFF',
+                        backgroundColor:'rgba(93,93,93,0.73)',
+                        "&:hover": { backgroundColor: "primary.main" }}}
+                    onClick={() => setCurPhoto(curPhoto-1)}
+                >
+                    <ChevronLeftIcon/>
+                </IconButton>
+                <IconButton
+                    disabled={curPhoto === photosList.length-1}
+                    sx={{position:'fixed',
+                        right:5,
+                        top:'50%',
+                        color: '#FFFFFF',
+                        backgroundColor:'rgba(93,93,93,0.73)',
+                        "&:hover": { backgroundColor: "primary.main" }}}
+                    onClick={() => setCurPhoto(curPhoto+1)}
+                >
+                    <ChevronRightIcon/>
+                </IconButton>
+                <img
+                    style={{maxWidth:'92%', maxHeight:'92%', borderRadius:10}}
+                    //@ts-ignore
+                    src={photosList[curPhoto].img}
+                    //@ts-ignore
+                    srcSet={`${photosList[curPhoto].img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                    //@ts-ignore
+                    alt={photosList[curPhoto].title}
+                    loading="lazy"
+                />
+            </Backdrop>
+        </>
+    )
+}

@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <RecoilRoot>
-          <BrowserRouter basename="/photosbyengineerit">
+          <BrowserRouter>
               <Routes>
                   <Route path='/' errorElement={<ErrorPage/>} element={<App/>}>
                       <Route path='gallery' element={<Gallery/>}/>

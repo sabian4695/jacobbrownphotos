@@ -338,11 +338,23 @@ export default function About() {
                                         fullWidth
                                         disableElevation
                                         variant='contained'
-                                        href="mailto:jbrow4@gmail.com"
+                                        href="mailto:jacobbrownphotos@gmail.com"
                                         endIcon={<EmailIcon />}
                                     >
-                                        jbrow4@gmail.com
+                                        jacobbrownphotos@gmail.com
                                     </Button>
+                                    {/*<Button
+                                        color='secondary'
+                                        fullWidth
+                                        disableElevation
+                                        variant='contained'
+                                        component='a'
+                                        target='blank'
+                                        href="https://squareup.com/appointments/book/k825d7pagz5h33/LB1MVWYW2084G/start"
+                                        endIcon={<EmailIcon />}
+                                    >
+                                        Book Online
+                                    </Button>*/}
                                 </Stack>
                             </Paper>
                         </Grow>

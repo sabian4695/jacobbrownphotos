@@ -12,11 +12,27 @@ export default function Lightbox() {
     const [curPhoto, setCurPhoto] = useRecoilState(currentPhoto)
     const [photosList, setPhotosList] = useRecoilState(photos)
     const [filtVal, setFiltValue] = useRecoilState(filterVal)
+    //@ts-ignore
+    const handleKeyDown = event => {
+        if(event.key === 'ArrowLeft') {
+            if (curPhoto === 0) {
+                return
+            }
+            setCurPhoto(curPhoto-1)
+        } else if(event.key === 'ArrowRight') {
+            if (curPhoto === photosList.length-1) {
+                return
+            }
+            setCurPhoto(curPhoto+1)
+        }
+    };
     return (
         <>
             <Backdrop
                 open={openModal}
                 sx={{zIndex:1200, backgroundColor:'rgba(12,12,12,0.91)'}}
+                onKeyDown={handleKeyDown}
+                tabIndex={0}
             >
                 <IconButton
                     sx={{position:'fixed',

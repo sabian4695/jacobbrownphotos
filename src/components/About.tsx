@@ -13,7 +13,6 @@ import Stack from "@mui/material/Stack";
 import WorkIcon from "@mui/icons-material/Work";
 import Avatar from "@mui/material/Avatar";
 import FaceIcon from "@mui/icons-material/Face";
-import GroupIcon from "@mui/icons-material/Group";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import Divider from '@mui/material/Divider';
 import {CardContent} from "@mui/material";
@@ -28,6 +27,9 @@ import CategoryIcon from '@mui/icons-material/Category';
 import {useRecoilState, useSetRecoilState} from "recoil";
 import {currentPhoto, filterVal, lightboxOpen, photos} from "../recoil/atoms";
 import {itemData} from "./allPhotos";
+import IconButton from "@mui/material/IconButton";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const titles = 'primary.dark'
 
@@ -73,9 +75,21 @@ export default function About() {
                             />
                             <CardContent>
                                 <Stack spacing={1}>
-                                    <Typography variant='h6' sx={{ fontWeight: '600'}} color={titles}>
-                                        Hi! My name is Jacob.
-                                    </Typography>
+                                    <Grid container xs={12} spacing={0} sx={{p:0}} justifyContent='space-between' alignItems='center'>
+                                        <Grid xs='auto'>
+                                            <Typography variant='h6' sx={{ fontWeight: '600'}} display='inline' color={titles}>
+                                                Hi! My name is Jacob.
+                                            </Typography>
+                                        </Grid>
+                                        <Grid xs='auto'>
+                                            <IconButton component='a' href='https://www.facebook.com/jacobbrownphotos' target='blank'>
+                                                <FacebookIcon/>
+                                            </IconButton>
+                                            <IconButton component='a' href='https://www.instagram.com/jacobbrown_photos/' target='blank'>
+                                                <InstagramIcon/>
+                                            </IconButton>
+                                        </Grid>
+                                    </Grid>
                                     <Typography variant='body1' color='text.secondary'>
                                         I've always loved capturing moments in my life. There's nothing like looking at beautiful photos from years back, especially of your loved ones.
                                     </Typography>

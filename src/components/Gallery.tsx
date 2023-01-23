@@ -49,14 +49,12 @@ export default function Gallery() {
         <>
             <Grid container>
                 <Grid xs={12}>
-                    <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                        <InputLabel id="demo-simple-select-standard-label">Filter</InputLabel>
+                    <FormControl variant="standard" sx={{ m: 1, minWidth: 140 }}>
+                        <InputLabel >Filter</InputLabel>
                         <Select
-                            labelId="demo-simple-select-standard-label"
-                            id="demo-simple-select-standard"
                             value={filtVal}
                             onChange={(event: SelectChangeEvent) => setFiltValue(event.target.value)}
-                            label="Age"
+                            label="Filter"
                         >
                             <MenuItem value=''>
                                 <em>None</em>
@@ -66,7 +64,8 @@ export default function Gallery() {
                             <MenuItem value={'portrait'}>Portrait</MenuItem>
                             <MenuItem value={'baby'}>Baby</MenuItem>
                             <MenuItem value={'pet'}>Pet</MenuItem>
-                            <MenuItem value={'food'}>Food</MenuItem>
+                            <MenuItem value={'graduate'}>Graduate</MenuItem>
+                            <MenuItem value={'product'}>Product</MenuItem>
                             <MenuItem value={'headshot'}>Headshots</MenuItem>
                             <MenuItem value={'general'}>General</MenuItem>
                         </Select>

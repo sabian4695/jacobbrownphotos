@@ -99,14 +99,14 @@ function App() {
             <Box sx={bigger ? {flexGrow:1} : null}>
               {bigger ?
                   <>
-                    <Button sx={{mr:1}} component={RouterLink} to="gallery" startIcon={<CameraRollIcon />}>
+                    <Button sx={{mx:1}} component={RouterLink} to="gallery" startIcon={<CameraRollIcon />}>
                       Gallery
                     </Button>
-                    <Button component={RouterLink} to="about" startIcon={<InfoIcon />}>
+                    <Button sx={{mx:1}} component={RouterLink} to="about" startIcon={<InfoIcon />}>
                       About
                     </Button>
                     {eventComing ?
-                        <Button component={RouterLink} to="events" startIcon={<EventIcon />}>
+                        <Button sx={{mx:1}} component={RouterLink} to="events" startIcon={<EventIcon />}>
                           Events
                         </Button>
                         :
@@ -175,7 +175,7 @@ function App() {
         </Menu>
         <Snackbar open={openSnack} autoHideDuration={6000} onClose={handleCloseSnack}>
           <Alert onClose={handleCloseSnack} severity="info" sx={{ width: '100%' }}>
-            Hey, there's a headshot event coming up on 01/22/23
+            Hey, there's a headshot event coming up on 02/18/23
             <Button sx={{mx:1}} color='inherit' variant='outlined' size='small' component={RouterLink} to="events">CLICK HERE</Button>
             to learn more!
           </Alert>

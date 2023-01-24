@@ -3,7 +3,6 @@ import engage1 from "../photos/engage1.jpeg";
 import engage2 from "../photos/engage2.jpeg";
 import engage3 from "../photos/engage3.jpeg";
 import engage4 from "../photos/engage4.jpeg";
-import family0 from "../photos/family0.jpeg";
 import family1 from "../photos/family1.jpeg";
 import family2 from "../photos/family2.jpeg";
 import family3 from "../photos/family3.jpeg";
@@ -13,12 +12,17 @@ import family6 from "../photos/family6.jpeg";
 import family7 from "../photos/family7.jpeg";
 import family8 from "../photos/family8.jpeg";
 import family9 from "../photos/family9.jpeg";
+import family11 from "../photos/family11.jpeg";
+import family12 from "../photos/family12.jpeg";
+import family13 from "../photos/family13.jpeg";
+import family14 from "../photos/family14.jpeg";
 import baby0 from "../photos/baby0.jpeg";
 import general0 from "../photos/general0.jpeg";
 import general1 from "../photos/general1.jpeg";
 import general2 from "../photos/general2.jpeg";
 import general3 from "../photos/general3.jpeg";
 import general4 from "../photos/general4.jpeg";
+import general5 from "../photos/general5.jpeg";
 import pet0 from "../photos/pet0.jpeg";
 import graduate0 from "../photos/graduate0.jpeg";
 import graduate1 from "../photos/graduate1.jpeg";
@@ -57,11 +61,6 @@ export const itemData = [
         img: engage4,
         title: 'Engagement4',
         category: 'engagement',
-    },
-    {
-        img: family0,
-        title: 'Family0',
-        category: 'family',
     },
     {
         img: family1,
@@ -109,6 +108,26 @@ export const itemData = [
         category: 'family',
     },
     {
+        img: family11,
+        title: 'Family11',
+        category: 'family',
+    },
+    {
+        img: family12,
+        title: 'Family12',
+        category: 'family',
+    },
+    {
+        img: family13,
+        title: 'Family13',
+        category: 'family',
+    },
+    {
+        img: family14,
+        title: 'Family14',
+        category: 'family',
+    },
+    {
         img: baby0,
         title: 'Baby0',
         category: 'baby',
@@ -136,6 +155,11 @@ export const itemData = [
     {
         img: general4,
         title: 'General4',
+        category: 'general',
+    },
+    {
+        img: general5,
+        title: 'General5',
         category: 'general',
     },
     {

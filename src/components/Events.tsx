@@ -10,18 +10,24 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import {CardContent} from "@mui/material";
 import {eventComing} from "../index";
-import {Navigate} from "react-router-dom";
+import {Navigate, useLocation} from "react-router-dom";
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import Chip from '@mui/material/Chip';
+import EventIcon from '@mui/icons-material/Event';
+import Avatar from "@mui/material/Avatar";
 
 const titles = 'primary.dark'
 
 export default function About() {
+    let location = useLocation();
     if (!eventComing) {
-        if (location.pathname === '/events') { return <Navigate to="/gallery" /> }
+        if (location.pathname === '/events') {
+            return <Navigate to="/gallery" /> }
     }
     return (
         <>
             <Grid container spacing={2} sx={{m:1}}>
-                <Grid xs={12} md={6} lg={4} sx={{mb:3}}>
+                <Grid xs={12} sx={{mb:3, display:'flex',alignItems:'center', justifyContent:'center'}} id='CHECK'>
                     <Grow
                         in={true}
                         {...({ timeout: 400 })}
@@ -34,15 +40,41 @@ export default function About() {
                             />
                             <CardContent>
                                 <Stack spacing={1}>
-                                    <Grid container xs={12} spacing={0} sx={{p:0}} justifyContent='space-between' alignItems='center'>
+                                    <Stack direction="row" justifyContent='space-between' alignItems='center'>
                                         <Typography variant='h6' sx={{ fontWeight: '600'}} display='inline' color={titles}>
                                             Professional Headshot Event
                                         </Typography>
-                                    </Grid>
+                                        <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$75</Avatar>
+                                    </Stack>
+                                    <Chip
+                                        label='Feb 18th, 2023 | 1PM - 4PM'
+                                        icon={<EventIcon/>}
+                                        color='secondary'
+                                        variant='outlined'
+                                    />
                                     <Typography variant='body1' color='text.secondary'>
-                                        Sign up via the link below to grab a spot for a professional headshot.
+                                        Do you need an updated headshot for LinkedIn?
+                                        Whether you are just entering the professional world or have been in a career for decades, an updated
+                                        professional headshot is a great way show people who you are. It's perfect for LinkedIn, email signatures,
+                                        and much more.
                                     </Typography>
-                                    <Button component='a' href=''>Book Now</Button>
+                                    <Typography variant='body1' color='text.secondary'>
+                                        I'm offering mini 15 - minute sessions from 1-4PM. There aren't many spots, so sign up now!
+                                    </Typography>
+                                    <Typography variant='subtitle2' color='text.secondary'>
+                                        I'll be offering two backdrops - grey and brick.
+                                    </Typography>
+                                    <Typography variant='body1' color='text.secondary'>
+                                        Grab a spot via the link below
+                                    </Typography>
+                                    <Button color='secondary'
+                                            variant='contained'
+                                            component='a'
+                                            target='blank'
+                                            endIcon={<ExitToAppIcon/>}
+                                            href='https://squareup.com/appointments/book/k825d7pagz5h33/LB1MVWYW2084G/start'>
+                                        Book Now
+                                    </Button>
                                 </Stack>
                             </CardContent>
                         </Card>

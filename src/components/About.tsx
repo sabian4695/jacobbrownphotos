@@ -62,7 +62,7 @@ export default function About() {
     return (
         <>
             <Grid container spacing={2} sx={{m:1}}>
-                <Grid xs={12} md={6} lg={4} sx={{mb:3}}>
+                <Grid xs={12} md={6} lg={4} sx={{mb:3,display:'flex',alignItems:'center', justifyContent:'center'}}>
                     <Grow
                         in={true}
                         {...({ timeout: 400 })}

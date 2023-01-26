@@ -8,6 +8,7 @@ import ErrorPage from './components/ErrorPage'
 import Gallery from './components/Gallery'
 import About from './components/About'
 import Events from './components/Events'
+import Home from './components/Home'
 import {RecoilRoot} from "recoil";
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
@@ -22,6 +23,7 @@ root.render(
           <BrowserRouter>
               <Routes>
                   <Route path='/' errorElement={<ErrorPage/>} element={<App/>}>
+                      <Route index element={<Home />} />
                       <Route path='gallery' element={<Gallery/>}/>
                       <Route path='about' element={<About/>}/>
                       <Route path='events' element={<Events/>}/>

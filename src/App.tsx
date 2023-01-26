@@ -1,9 +1,8 @@
 import React from 'react';
-import { useLocation } from "react-router-dom";
 import {
   Link as RouterLink,
 } from 'react-router-dom';
-import { Navigate, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { createTheme } from "@mui/material/styles";
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
@@ -32,6 +31,7 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import EventIcon from '@mui/icons-material/Event';
 import {eventComing} from "./index";
+import HomeIcon from '@mui/icons-material/Home';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
@@ -74,8 +74,6 @@ function App() {
     }
     setOpenSnack(false);
   };
-  let location = useLocation();
-  if (location.pathname === '/') { return <Navigate to="/gallery" /> }
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -99,6 +97,9 @@ function App() {
             <Box sx={bigger ? {flexGrow:1} : null}>
               {bigger ?
                   <>
+                    <Button sx={{mx:1}} component={RouterLink} to="/" startIcon={<HomeIcon />}>
+                      Home
+                    </Button>
                     <Button sx={{mx:1}} component={RouterLink} to="gallery" startIcon={<CameraRollIcon />}>
                       Gallery
                     </Button>
@@ -144,6 +145,14 @@ function App() {
               'aria-labelledby': 'basic-button',
             }}
         >
+          <MenuItem onClick={handleCloseMenu} component={RouterLink} to="/">
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText>
+              Home
+            </ListItemText>
+          </MenuItem>
           <MenuItem onClick={handleCloseMenu} component={RouterLink} to="gallery">
             <ListItemIcon>
               <CameraRollIcon />

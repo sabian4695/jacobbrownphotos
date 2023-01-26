@@ -20,6 +20,9 @@ const titles = 'primary.dark'
 
 export default function About() {
     let location = useLocation();
+    React.useEffect(() => {
+        document.title = 'EVENTS | Jacob Brown Photos';
+    }, []);
     if (!eventComing) {
         if (location.pathname === '/events') {
             return <Navigate to="/gallery" /> }
@@ -87,7 +90,7 @@ export default function About() {
                     {...({ timeout: 2000 })}
                 >
                     <Paper sx={{p:'1', textAlign:'center', height:'100%'}} elevation={0}>
-                        <Typography variant='caption' color='text.secondary'>website made by Jacob Brown</Typography>
+                        <Typography variant='caption' color='text.secondary'>website made by &copy; Jacob Brown Photos</Typography>
                     </Paper>
                 </Grow>
             </Grid>

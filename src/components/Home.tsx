@@ -269,17 +269,17 @@ export default function Gallery() {
                         variant='body1'
                     >
                         Jacob Brown Photos is owned and operated by Jacob Brown, working mainly out of the
-                        historic downtown Canal Winchester, Pickerington, Caroll, and surrounding areas.
+                        historic downtown Canal Winchester, Pickerington, Carroll, and surrounding areas.
                     </Typography>
                 </Grid>
                 <Grid xs='auto'>
                     <Button sx={{mx:1}} variant='contained' component={RouterLink} to="about" startIcon={<InfoIcon />}>
-                        Learn More
+                        About / Pricing
                     </Button>
                 </Grid>
                 <Grid xs='auto'>
                     <Button sx={{mx:1}} variant='contained' component={RouterLink} to="gallery" startIcon={<CameraRollIcon />}>
-                        See More
+                        See Gallery
                     </Button>
                 </Grid>
             </Grid>

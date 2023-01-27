@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: <https://www.jacobbrownphotos.com/sitemap.xml>
+Sitemap: https://www.jacobbrownphotos.com/sitemap.xml

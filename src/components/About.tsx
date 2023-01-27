@@ -39,7 +39,7 @@ export default function About() {
     const [photosList, setPhotosList] = useRecoilState(photos)
     const setCurPhoto = useSetRecoilState(currentPhoto)
     React.useEffect(() => {
-        document.title = 'ABOUT | Jacob Brown Photos';
+        document.title = 'ABOUT | Jacob Brown Photos - Canal Winchester, Ohio Photographer';
     }, []);
     function chipClick(title: string) {
         setFiltValue(title)
@@ -81,8 +81,8 @@ export default function About() {
                                 <Stack spacing={1}>
                                     <Grid container xs={12} spacing={0} sx={{p:0}} justifyContent='space-between' alignItems='center'>
                                         <Grid xs='auto'>
-                                            <Typography variant='h6' sx={{ fontWeight: '600'}} display='inline' color={titles}>
-                                                Hi! My name is Jacob.
+                                            <Typography variant='h6' component='h1' sx={{ fontWeight: '600'}} display='inline' color={titles}>
+                                                A little about me...
                                             </Typography>
                                         </Grid>
                                         <Grid xs='auto'>
@@ -107,8 +107,8 @@ export default function About() {
                                         p.s. I also love videography, so feel free to reach out to me if you have any needs in this area.
                                     </Typography>
                                     <div>
-                                        <Typography variant='body1' sx={{ fontWeight: '600'}} color='text.secondary'>
-                                            areas:
+                                        <Typography variant='body1' sx={{ fontWeight: '400'}} color='text.secondary'>
+                                            serving areas:
                                         </Typography>
                                         <Chip
                                             clickable
@@ -156,7 +156,7 @@ export default function About() {
                                 {...({ timeout: 400 })}
                             >
                                 <Paper elevation={3} sx={{p:1, borderRadius:'15px'}}>
-                                    <Typography variant='h5' sx={{ fontWeight: '600'}} color={titles}>
+                                    <Typography variant='h5' component='h2' sx={{ fontWeight: '600'}} color={titles}>
                                         Styling
                                     </Typography>
                                     <Typography variant='subtitle1' sx={{ fontWeight: '400'}} id='pricing' color='text.secondary'>
@@ -176,7 +176,7 @@ export default function About() {
                                 {...({ timeout: 400 })}
                             >
                                 <Paper elevation={3} sx={{p:1, borderRadius:'15px'}}>
-                                    <Typography variant='h5' sx={{ fontWeight: '600'}} color={titles}>
+                                    <Typography variant='h5' component='h2' sx={{ fontWeight: '600'}} color={titles}>
                                         Pricing
                                     </Typography>
                                     <Stack spacing={0}>
@@ -338,8 +338,11 @@ export default function About() {
                         >
                             <Paper elevation={3} sx={{p:1, borderRadius:'15px'}}>
                                 <Stack spacing={1}>
-                                    <Typography variant='h5' sx={{ fontWeight: '600'}} color={titles}>
+                                    <Typography variant='h5' component='h2' sx={{ fontWeight: '600'}} color={titles}>
                                         Contact
+                                    </Typography>
+                                    <Typography variant='body1' color='text.secondary'>
+                                        The best way to reach me is by emailing or texting me! I look forward to working with you.
                                     </Typography>
                                     <Button
                                         color='secondary'

@@ -39,67 +39,67 @@ import baby2 from "../photos/baby2.jpeg";
 export const itemData = [
     {
         img: engage0,
-        title: 'Engagement0',
+        title: 'Engagement Photos',
         category: 'engagement',
     },
     {
         img: engage1,
-        title: 'Engagement1',
+        title: 'Jeremy and Tiffany',
         category: 'engagement',
     },
     {
         img: engage2,
-        title: 'Engagement2',
+        title: 'Engagement Session',
         category: 'engagement',
     },
     {
         img: engage3,
-        title: 'Engagement3',
+        title: 'Couple Photos',
         category: 'engagement',
     },
     {
         img: engage4,
-        title: 'Engagement4',
+        title: 'Engagement Ring Photo',
         category: 'engagement',
     },
     {
         img: family1,
-        title: 'Family1',
+        title: 'Momma and Baby Photos',
         category: 'family',
     },
     {
         img: family2,
-        title: 'Family2',
+        title: 'Daddy and Baby Photos',
         category: 'family',
     },
     {
         img: family3,
-        title: 'Family3',
+        title: 'Mommy and Baby Photos',
         category: 'family',
     },
     {
         img: family4,
-        title: 'Family4',
+        title: 'Baby Photos',
         category: 'family',
     },
     {
         img: family5,
-        title: 'Family5',
+        title: 'Family Photos',
         category: 'family',
     },
     {
         img: family6,
-        title: 'Family6',
+        title: 'Baby Picture',
         category: 'family',
     },
     {
         img: family7,
-        title: 'Family7',
+        title: 'Timeless Family Photos',
         category: 'family',
     },
     {
         img: family8,
-        title: 'Family8',
+        title: 'Sweet Baby Pictures',
         category: 'family',
     },
     {
@@ -164,43 +164,43 @@ export const itemData = [
     },
     {
         img: pet0,
-        title: 'Pet0',
+        title: 'Pet Photos',
         category: 'pet',
     }, {
         img: graduate0,
-        title: 'Graduate0',
+        title: 'Graduate Photos',
         category: 'graduate',
     },{
         img: graduate1,
-        title: 'Graduate1',
+        title: 'Graduate Pictures',
         category: 'graduate',
     },{
         img: graduate2,
-        title: 'Graduate2',
+        title: 'Senior Photos',
         category: 'graduate',
     },{
         img: graduate3,
-        title: 'Graduate3',
+        title: 'Senior Pictures',
         category: 'graduate',
     },{
         img: headshot0,
-        title: 'Headshot0',
+        title: 'Professional Headshots',
         category: 'headshot',
     },{
         img: headshot1,
-        title: 'Headshot1',
+        title: 'Headshot Portraits',
         category: 'headshot',
     },{
         img: portrait0,
-        title: 'Portrait0',
+        title: 'General Portraits',
         category: 'portrait',
     },{
         img: food0,
-        title: 'Product0',
+        title: 'Product Photography',
         category: 'product',
     },{
         img: food1,
-        title: 'Product1',
+        title: 'Product Photos',
         category: 'product',
     },
     {

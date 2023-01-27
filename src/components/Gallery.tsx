@@ -24,7 +24,8 @@ export default function Gallery() {
     const [photosList, setPhotosList] = useRecoilState(photos)
 
     React.useEffect(() => {
-        document.title = 'GALLERY | Jacob Brown Photos';
+        document.title = 'GALLERY | Jacob Brown Photos - Canal Winchester, Ohio Photographer';
+        setFiltValue('')
     }, []);
 
     React.useEffect(() => {

@@ -94,7 +94,7 @@ function App() {
             >
               photos
             </Typography>
-            <Box sx={bigger ? {flexGrow:1} : null}>
+            <Box sx={bigger ? {display:'flex'} : null}>
               {bigger ?
                   <>
                     <Button sx={{mx:1}} component={RouterLink} to="/" startIcon={<HomeIcon />}>

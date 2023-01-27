@@ -21,7 +21,7 @@ const titles = 'primary.dark'
 export default function About() {
     let location = useLocation();
     React.useEffect(() => {
-        document.title = 'EVENTS | Jacob Brown Photos';
+        document.title = 'EVENTS | Jacob Brown Photos - Canal Winchester, Ohio Photographer';
     }, []);
     if (!eventComing) {
         if (location.pathname === '/events') {

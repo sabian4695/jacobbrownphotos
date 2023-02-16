@@ -17,14 +17,6 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import {useRecoilState, useSetRecoilState} from "recoil";
 import {currentPhoto, filterVal, lightboxOpen, photos} from "../recoil/atoms";
 import {itemData} from "./allPhotos";
-import engage0 from "../photos/engage0.jpeg";
-import engage1 from "../photos/engage1.jpeg"
-import baby0 from "../photos/baby0.jpeg"
-import family12 from "../photos/family12.jpeg"
-import pet0 from "../photos/pet0.jpeg"
-import family7 from "../photos/family7.jpeg"
-import food1 from "../photos/food1.jpeg"
-import family14 from "../photos/family14.jpeg"
 import Button from "@mui/material/Button";
 import {Link as RouterLink} from "react-router-dom";
 import InfoIcon from "@mui/icons-material/Info";
@@ -32,19 +24,19 @@ import CameraRollIcon from "@mui/icons-material/CameraRoll";
 
 const headerPhotos = [
     {
-        img: engage1,
+        img: '/images/engage1.jpeg',
         title: 'Engagement Photo',
         category: 'engagement',
     }, {
-        img: baby0,
+        img: '/images/baby0.jpeg',
         title: 'Baby Photos',
         category: 'baby',
     }, {
-        img: family12,
+        img: '/images/family12.jpeg',
         title: 'Family Photos',
         category: 'family',
     }, {
-        img: family7,
+        img: '/images/family7.jpeg',
         title: 'Family Portraits',
         category: 'family',
     }
@@ -52,19 +44,19 @@ const headerPhotos = [
 
 const middlePhotos = [
     {
-        img: engage0,
+        img: '/images/engage0.jpeg',
         title: 'Engagement Photo',
         category: 'engagement',
     }, {
-        img: pet0,
+        img: '/images/pet0.jpeg',
         title: 'Pet Photos',
         category: 'pet',
     }, {
-        img: food1,
+        img: '/images/food1.jpeg',
         title: 'Product Photos',
         category: 'product',
     }, {
-        img: family14,
+        img: '/images/family14.jpeg',
         title: 'Family  Photos',
         category: 'family',
     }

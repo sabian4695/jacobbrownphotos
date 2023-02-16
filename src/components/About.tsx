@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography';
 import Grow from '@mui/material/Grow';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
-import headshot0 from '../photos/headshot0.jpeg'
 import Chip from '@mui/material/Chip';
 import EmailIcon from "@mui/icons-material/Email";
 import Button from "@mui/material/Button";
@@ -74,7 +73,7 @@ export default function About() {
                         <Card id='about' elevation={3} sx={{maxWidth: 400, borderRadius:'15px', alignSelf:'center', justifySelf:'center'}}>
                             <CardMedia
                                 component="img"
-                                image={headshot0}
+                                src='/images/headshot0.jpeg'
                                 title="headshot0"
                             />
                             <CardContent>

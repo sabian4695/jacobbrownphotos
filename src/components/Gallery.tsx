@@ -50,6 +50,7 @@ export default function Gallery() {
         setCurPhoto(id)
         setOpenModal(true)
     }
+
     return (
         <>
             <Grid container>
@@ -77,23 +78,22 @@ export default function Gallery() {
                     </FormControl>
                 </Grid>
                 <Grid xs={12}>
-                    <ImageList sx={{ width: '100%'}} cols={small ? 3 : 2} variant="masonry">
-                        {/*//@ts-ignore*/}
+                    <ImageList sx={{width: '100%'}} cols={small ? 3 : 2} variant='masonry'>
                         {photosList.map((item, index) => (
                                     <Grow
                                         in={true}
                                         {...({ timeout: 1000 })}
-                                        key={item.title}
+                                        key={index}
                                     >
-                                        <ImageListItem key={item.title}>
-                                            <img
-                                                style={{cursor:'pointer'}}
-                                                onClick={() => openImage(index)}
-                                                src={`${item.img}`}
-                                                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                                                alt={item.title}
-                                                loading="lazy"
-                                            />
+                                        <ImageListItem key={index}>
+                                                <img
+                                                    style={{cursor: 'pointer', height:'100%'}}
+                                                    onClick={() => openImage(index)}
+                                                    src={`${item.img}`}
+                                                    srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                                                    alt={item.title}
+                                                    loading="lazy"
+                                                />
                                         </ImageListItem>
                                     </Grow>
                                 ))}

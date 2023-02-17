@@ -75,6 +75,7 @@ export default function About() {
                                 component="img"
                                 src='/images/headshot0.jpeg'
                                 title="headshot0"
+                                sx={{minHeight:300}}
                             />
                             <CardContent>
                                 <Stack spacing={1}>
@@ -188,6 +189,9 @@ export default function About() {
                                                     starting at
                                                 </Typography>
                                                 <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$150</Avatar>
+                                                <Typography variant='body2' sx={{ fontWeight: '400'}} color='text.secondary'>
+                                                    /hr
+                                                </Typography>
                                             </Stack>
                                         </Stack>
                                         <Grid container direction='row' spacing={1}>
@@ -231,6 +235,9 @@ export default function About() {
                                                     starting at
                                                 </Typography>
                                                 <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$200</Avatar>
+                                                <Typography variant='body2' sx={{ fontWeight: '400'}} color='text.secondary'>
+                                                    /hr
+                                                </Typography>
                                             </Stack>
                                         </Stack>
                                         <Grid container direction='row' spacing={1}>
@@ -264,7 +271,10 @@ export default function About() {
                                                 <Typography variant='body2' sx={{ fontWeight: '400'}} id='pricing' color='text.disabled'>
                                                     starting at
                                                 </Typography>
-                                                <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$700</Avatar>
+                                                <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$250</Avatar>
+                                                <Typography variant='body2' sx={{ fontWeight: '400'}} color='text.secondary'>
+                                                    /hr
+                                                </Typography>
                                             </Stack>
                                         </Stack>
                                         <Grid container direction='row' spacing={1}>
@@ -294,7 +304,7 @@ export default function About() {
                                                 <Typography variant='body2' sx={{ fontWeight: '400'}} id='pricing' color='text.disabled'>
                                                     starting at
                                                 </Typography>
-                                                <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$100</Avatar>
+                                                <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$75</Avatar>
                                             </Stack>
                                         </Stack>
                                         <Grid container direction='row' spacing={1}>

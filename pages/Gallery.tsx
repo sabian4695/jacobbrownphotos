@@ -11,9 +11,9 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import {currentPhoto, lightboxOpen, photos, filterVal} from "../recoil/atoms";
+import {currentPhoto, lightboxOpen, photos, filterVal} from "../src/recoil/atoms";
 import {useRecoilState, useSetRecoilState} from "recoil";
-import {itemData} from "./allPhotos";
+import {itemData} from "../src/components/allPhotos";
 
 export default function Gallery() {
     const theme = useTheme();

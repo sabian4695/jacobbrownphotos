@@ -1,3 +1,17 @@
+import { HTML, Head, Main, NextScript } from 'next/Document'
+
+export default function Document() {
+  return(
+    <Html lang="en">
+      <Head/>
+      <body>
+        <Main/>
+        <NextScript/>
+      </body>
+    </Html>
+  )
+}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

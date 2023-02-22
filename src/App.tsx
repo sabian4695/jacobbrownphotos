@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Link as RouterLink,
-} from 'react-router-dom';
+import Link from 'next/link'
 import { Outlet } from "react-router-dom";
 import { createTheme } from "@mui/material/styles";
 import CssBaseline from '@mui/material/CssBaseline';
@@ -30,7 +28,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import EventIcon from '@mui/icons-material/Event';
-import {eventComing} from "./index";
+import {eventComing} from "../pages/index";
 import HomeIcon from '@mui/icons-material/Home';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
@@ -97,17 +95,17 @@ function App() {
             <Box sx={bigger ? {display:'flex'} : null}>
               {bigger ?
                   <>
-                    <Button sx={{mx:1}} component={RouterLink} to="/" startIcon={<HomeIcon />}>
+                    <Button sx={{mx:1}} component={Link} to="/" startIcon={<HomeIcon />}>
                       Home
                     </Button>
-                    <Button sx={{mx:1}} component={RouterLink} to="gallery" startIcon={<CameraRollIcon />}>
+                    <Button sx={{mx:1}} component={Link} to="gallery" startIcon={<CameraRollIcon />}>
                       Gallery
                     </Button>
-                    <Button sx={{mx:1}} component={RouterLink} to="about" startIcon={<InfoIcon />}>
+                    <Button sx={{mx:1}} component={Link} to="about" startIcon={<InfoIcon />}>
                       About
                     </Button>
                     {eventComing ?
-                        <Button sx={{mx:1}} component={RouterLink} to="events" startIcon={<EventIcon />}>
+                        <Button sx={{mx:1}} component={Link} to="events" startIcon={<EventIcon />}>
                           Events
                         </Button>
                         :
@@ -145,7 +143,7 @@ function App() {
               'aria-labelledby': 'basic-button',
             }}
         >
-          <MenuItem onClick={handleCloseMenu} component={RouterLink} to="/">
+          <MenuItem onClick={handleCloseMenu} component={Link} to="/">
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
@@ -153,7 +151,7 @@ function App() {
               Home
             </ListItemText>
           </MenuItem>
-          <MenuItem onClick={handleCloseMenu} component={RouterLink} to="gallery">
+          <MenuItem onClick={handleCloseMenu} component={Link} to="gallery">
             <ListItemIcon>
               <CameraRollIcon />
             </ListItemIcon>
@@ -161,7 +159,7 @@ function App() {
               Gallery
             </ListItemText>
           </MenuItem>
-          <MenuItem onClick={handleCloseMenu} component={RouterLink} to="about">
+          <MenuItem onClick={handleCloseMenu} component={Link} to="about">
             <ListItemIcon>
               <InfoIcon />
             </ListItemIcon>
@@ -170,7 +168,7 @@ function App() {
             </ListItemText>
           </MenuItem>
           {eventComing ?
-              <MenuItem onClick={handleCloseMenu} component={RouterLink} to="events">
+              <MenuItem onClick={handleCloseMenu} component={Link} to="events">
                 <ListItemIcon>
                   <EventIcon />
                 </ListItemIcon>
@@ -185,7 +183,7 @@ function App() {
         <Snackbar open={openSnack} autoHideDuration={6000} onClose={handleCloseSnack}>
           <Alert onClose={handleCloseSnack} severity="info" sx={{ width: '100%' }}>
             Hey, there's a headshot event coming up on 02/18/23
-            <Button sx={{mx:1}} color='inherit' variant='outlined' size='small' component={RouterLink} to="events">CLICK HERE</Button>
+            <Button sx={{mx:1}} color='inherit' variant='outlined' size='small' component={Link} to="events">CLICK HERE</Button>
             to learn more!
           </Alert>
         </Snackbar>

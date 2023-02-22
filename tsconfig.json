@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "pages/About.tsx", "pages/Gallery.tsx", "pages/Events.tsx"  ]
 }

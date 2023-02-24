@@ -8,26 +8,30 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import {CardContent} from "@mui/material";
-import {eventComing} from "../index";
-import {Navigate, useLocation} from "react-router-dom";
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import Chip from '@mui/material/Chip';
 import EventIcon from '@mui/icons-material/Event';
 import Avatar from "@mui/material/Avatar";
+import Head from 'next/head'
 
 const titles = 'primary.dark'
 
 export default function About() {
-    let location = useLocation();
-    React.useEffect(() => {
-        document.title = 'EVENTS | Jacob Brown Photos - Canal Winchester, Ohio Photographer';
-    }, []);
-    if (!eventComing) {
-        if (location.pathname === '/events') {
-            return <Navigate to="/gallery" /> }
-    }
     return (
         <>
+        <Head>
+          <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#000000" />
+          <meta
+            name="description"
+            content="Jacob Brown Photos - Canal Winchester, Ohio Professional Photographer. Book me for professional headshots, family photos, senior photos, product photos, pet photos, baby photos, and much more."
+          />
+          <meta name="robots" content="index,follow" />
+          <link rel="apple-touch-icon" href="%PUBLIC_URL%/android-chrome-192x192.png" />
+          <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+          <title>EVENTS | Jacob Brown Photos - Canal Winchester, Ohio Photographer</title>
+        </Head>
             <Grid container spacing={2} sx={{m:1}}>
                 <Grid xs={12} sx={{mb:3, display:'flex',alignItems:'center', justifyContent:'center'}} id='CHECK'>
                     <Grow

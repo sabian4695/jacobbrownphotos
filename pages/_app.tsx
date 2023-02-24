@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  Link as RouterLink,
-} from 'react-router-dom';
-import { Outlet } from "react-router-dom";
+import Link from 'next/link'
 import { createTheme } from "@mui/material/styles";
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
@@ -17,8 +14,7 @@ import CameraRollIcon from '@mui/icons-material/CameraRoll';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import logo from './logo.png'
-import Lightbox from "./components/Lightbox";
+import Lightbox from "../src/components/Lightbox";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import IconButton from "@mui/material/IconButton";
@@ -32,6 +28,8 @@ import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import EventIcon from '@mui/icons-material/Event';
 import {eventComing} from "./index";
 import HomeIcon from '@mui/icons-material/Home';
+import {RecoilRoot} from "recoil";
+import Image from 'next/image'
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
@@ -56,7 +54,7 @@ const theme = createTheme({
   }
 })
 
-function App() {
+export default function App({ Component, pageProps }) {
   const theme1 = useTheme();
   const bigger = useMediaQuery(theme1.breakpoints.up('sm'));
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -76,14 +74,15 @@ function App() {
   };
   return (
     <>
+    <RecoilRoot>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <AppBar component="nav" sx={{backgroundColor:'background.paper', color:'primary.main'}}>
           <Toolbar>
-            <img
+            <Image
                 height='30'
-                src={logo}
-                srcSet={`${logo}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                width='30'
+                src='/images/logo.png'
                 alt='logo'
                 loading="lazy"
             />
@@ -97,17 +96,17 @@ function App() {
             <Box sx={bigger ? {display:'flex'} : null}>
               {bigger ?
                   <>
-                    <Button sx={{mx:1}} component={RouterLink} to="/" startIcon={<HomeIcon />}>
+                    <Button sx={{mx:1}} component={Link} href="/" startIcon={<HomeIcon />}>
                       Home
                     </Button>
-                    <Button sx={{mx:1}} component={RouterLink} to="gallery" startIcon={<CameraRollIcon />}>
+                    <Button sx={{mx:1}} component={Link} href="gallery" startIcon={<CameraRollIcon />}>
                       Gallery
                     </Button>
-                    <Button sx={{mx:1}} component={RouterLink} to="about" startIcon={<InfoIcon />}>
+                    <Button sx={{mx:1}} component={Link} href="about" startIcon={<InfoIcon />}>
                       About
                     </Button>
                     {eventComing ?
-                        <Button sx={{mx:1}} component={RouterLink} to="events" startIcon={<EventIcon />}>
+                        <Button sx={{mx:1}} component={Link} href="events" startIcon={<EventIcon />}>
                           Events
                         </Button>
                         :
@@ -133,7 +132,7 @@ function App() {
           <Box component="main"
             sx={{p: 1, width:'100%'}}>
             <Toolbar/>
-            <Outlet />
+            <Component {...pageProps} />
           </Box>
         <Lightbox/>
         <Menu
@@ -145,7 +144,7 @@ function App() {
               'aria-labelledby': 'basic-button',
             }}
         >
-          <MenuItem onClick={handleCloseMenu} component={RouterLink} to="/">
+          <MenuItem onClick={handleCloseMenu} component={Link} href="/">
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
@@ -153,7 +152,7 @@ function App() {
               Home
             </ListItemText>
           </MenuItem>
-          <MenuItem onClick={handleCloseMenu} component={RouterLink} to="gallery">
+          <MenuItem onClick={handleCloseMenu} component={Link} href="gallery">
             <ListItemIcon>
               <CameraRollIcon />
             </ListItemIcon>
@@ -161,7 +160,7 @@ function App() {
               Gallery
             </ListItemText>
           </MenuItem>
-          <MenuItem onClick={handleCloseMenu} component={RouterLink} to="about">
+          <MenuItem onClick={handleCloseMenu} component={Link} href="about">
             <ListItemIcon>
               <InfoIcon />
             </ListItemIcon>
@@ -170,7 +169,7 @@ function App() {
             </ListItemText>
           </MenuItem>
           {eventComing ?
-              <MenuItem onClick={handleCloseMenu} component={RouterLink} to="events">
+              <MenuItem onClick={handleCloseMenu} component={Link} href="events">
                 <ListItemIcon>
                   <EventIcon />
                 </ListItemIcon>
@@ -185,13 +184,12 @@ function App() {
         <Snackbar open={openSnack} autoHideDuration={6000} onClose={handleCloseSnack}>
           <Alert onClose={handleCloseSnack} severity="info" sx={{ width: '100%' }}>
             Hey, there's a headshot event coming up on 02/18/23
-            <Button sx={{mx:1}} color='inherit' variant='outlined' size='small' component={RouterLink} to="events">CLICK HERE</Button>
+            <Button sx={{mx:1}} color='inherit' variant='outlined' size='small' component={Link} href="events">CLICK HERE</Button>
             to learn more!
           </Alert>
         </Snackbar>
       </ThemeProvider>
+      </RecoilRoot>
     </>
   );
 }
-
-export default App;

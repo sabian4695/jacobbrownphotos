@@ -6,6 +6,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Backdrop from "@mui/material/Backdrop";
 import {useRecoilState} from "recoil";
 import {currentPhoto, filterVal, lightboxOpen, photos} from "../recoil/atoms";
+import Image from 'next/image'
 
 export default function Lightbox() {
     const [openModal, setOpenModal] = useRecoilState(lightboxOpen)
@@ -69,13 +70,9 @@ export default function Lightbox() {
                 >
                     <ChevronRightIcon/>
                 </IconButton>
-                <img
-                    style={{maxWidth:'92%', maxHeight:'92%', borderRadius:10}}
-                    //@ts-ignore
+                <Image
+                    style={{maxWidth:'92%', maxHeight:'92%', borderRadius:10, objectFit:'scale-down'}}
                     src={photosList[curPhoto].img}
-                    //@ts-ignore
-                    srcSet={`${photosList[curPhoto].img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                    //@ts-ignore
                     alt={photosList[curPhoto].title}
                     loading="lazy"
                 />

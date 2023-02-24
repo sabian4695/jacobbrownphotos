@@ -14,19 +14,30 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import {currentPhoto, lightboxOpen, photos, filterVal} from "../src/recoil/atoms";
 import {useRecoilState, useSetRecoilState} from "recoil";
 import {itemData} from "../src/components/allPhotos";
+import Head from 'next/head'
+import Image from 'next/image'
+
+const keyStr =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+
+const triplet = (e1: number, e2: number, e3: number) =>
+  keyStr.charAt(e1 >> 2) +
+  keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
+  keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
+  keyStr.charAt(e3 & 63)
+
+const rgbDataURL = (r: number, g: number, b: number) =>
+  `data:image/gif;base64,R0lGODlhAQABAPAA${
+    triplet(0, r, g) + triplet(b, 255, 255)
+  }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
 
 export default function Gallery() {
     const theme = useTheme();
-    const small = useMediaQuery(theme.breakpoints.up('sm'));
+    const small = useMediaQuery(theme.breakpoints.up('md'));
     const setOpenModal = useSetRecoilState(lightboxOpen)
     const setCurPhoto = useSetRecoilState(currentPhoto)
     const [filtVal, setFiltValue] = useRecoilState(filterVal)
     const [photosList, setPhotosList] = useRecoilState(photos)
-
-    React.useEffect(() => {
-        document.title = 'GALLERY | Jacob Brown Photos - Canal Winchester, Ohio Photographer';
-        setFiltValue('')
-    }, []);
 
     React.useEffect(() => {
         if(filtVal !== '') {
@@ -53,6 +64,19 @@ export default function Gallery() {
 
     return (
         <>
+        <Head>
+          <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#000000" />
+          <meta
+            name="description"
+            content="Jacob Brown Photos - Canal Winchester, Ohio Professional Photographer. Book me for professional headshots, family photos, senior photos, product photos, pet photos, baby photos, and much more."
+          />
+          <meta name="robots" content="index,follow" />
+          <link rel="apple-touch-icon" href="%PUBLIC_URL%/android-chrome-192x192.png" />
+          <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+          <title>GALLERY | Jacob Brown Photos - Canal Winchester, Ohio Photographer</title>
+        </Head>
             <Grid container>
                 <Grid xs={12} sx={{display:'flex', justifyContent:'center'}}>
                     <FormControl variant="standard" sx={{ m: 1, minWidth: 250 }}>
@@ -86,13 +110,14 @@ export default function Gallery() {
                                         key={index}
                                     >
                                         <ImageListItem key={index}>
-                                                <img
-                                                    style={{cursor: 'pointer', height:'100%'}}
+                                                <Image
+                                                    style={{cursor: 'pointer', objectFit:'scale-down', width:'100%', height:'auto'}}
                                                     onClick={() => openImage(index)}
-                                                    src={`${item.img}`}
-                                                    srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                                                    src={item.img}
                                                     alt={item.title}
                                                     loading="lazy"
+                                                    placeholder='blur'
+                                                    blurDataURL={rgbDataURL(175, 175, 175)}
                                                 />
                                         </ImageListItem>
                                     </Grow>

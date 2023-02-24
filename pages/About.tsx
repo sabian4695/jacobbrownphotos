@@ -29,6 +29,7 @@ import {itemData} from "../src/components/allPhotos";
 import IconButton from "@mui/material/IconButton";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import Head from 'next/head'
 
 const titles = 'primary.dark'
 
@@ -37,9 +38,6 @@ export default function About() {
     const [filtVal, setFiltValue] = useRecoilState(filterVal)
     const [photosList, setPhotosList] = useRecoilState(photos)
     const setCurPhoto = useSetRecoilState(currentPhoto)
-    React.useEffect(() => {
-        document.title = 'ABOUT | Jacob Brown Photos - Canal Winchester, Ohio Photographer';
-    }, []);
     function chipClick(title: string) {
         setFiltValue(title)
         setOpenModal(true)
@@ -64,6 +62,19 @@ export default function About() {
     }, [filtVal])
     return (
         <>
+        <Head>
+          <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#000000" />
+          <meta
+            name="description"
+            content="Jacob Brown Photos - Canal Winchester, Ohio Professional Photographer. Book me for professional headshots, family photos, senior photos, product photos, pet photos, baby photos, and much more."
+          />
+          <meta name="robots" content="index,follow" />
+          <link rel="apple-touch-icon" href="%PUBLIC_URL%/android-chrome-192x192.png" />
+          <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+          <title>ABOUT | Jacob Brown Photos - Canal Winchester, Ohio Photographer</title>
+        </Head>
             <Grid container spacing={2} sx={{m:1}}>
                 <Grid xs={12} md={6} lg={4} sx={{mb:3,display:'flex',alignItems:'center', justifyContent:'center'}}>
                     <Grow

@@ -3,7 +3,6 @@ import Grow from '@mui/material/Grow';
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
-import logo from "../logo.png";
 import Chip from "@mui/material/Chip";
 import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
 import FestivalIcon from "@mui/icons-material/Festival";
@@ -18,7 +17,7 @@ import {useRecoilState, useSetRecoilState} from "recoil";
 import {currentPhoto, filterVal, lightboxOpen, photos} from "../recoil/atoms";
 import {itemData} from "./allPhotos";
 import Button from "@mui/material/Button";
-import {Link as RouterLink} from "react-router-dom";
+import Link from 'next/link'
 import InfoIcon from "@mui/icons-material/Info";
 import CameraRollIcon from "@mui/icons-material/CameraRoll";
 
@@ -105,8 +104,8 @@ export default function Gallery() {
                 <Grid xs={12} sx={{display:'flex', justifyContent:'center'}}>
                     <img
                         height='100'
-                        src={logo}
-                        srcSet={`${logo}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                        src='/images/logo.png'
+                        srcSet={`${'/images/logo.png'}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                         alt='logo'
                         loading="lazy"
                     />
@@ -265,12 +264,12 @@ export default function Gallery() {
                     </Typography>
                 </Grid>
                 <Grid xs='auto'>
-                    <Button sx={{mx:1}} variant='contained' component={RouterLink} to="about" startIcon={<InfoIcon />}>
+                    <Button sx={{mx:1}} variant='contained' component={Link} href="about" startIcon={<InfoIcon />}>
                         About / Pricing
                     </Button>
                 </Grid>
                 <Grid xs='auto'>
-                    <Button sx={{mx:1}} variant='contained' component={RouterLink} to="gallery" startIcon={<CameraRollIcon />}>
+                    <Button sx={{mx:1}} variant='contained' component={Link} href="gallery" startIcon={<CameraRollIcon />}>
                         See Gallery
                     </Button>
                 </Grid>

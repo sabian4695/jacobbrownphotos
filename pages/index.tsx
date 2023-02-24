@@ -1,37 +1,29 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import ErrorPage from './components/ErrorPage'
-import Gallery from './components/Gallery'
-import About from './components/About'
-import Events from './components/Events'
-import Home from './components/Home'
-import {RecoilRoot} from "recoil";
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import Home from '../src/components/Home';
+import reportWebVitals from '../src/reportWebVitals';
+import Head from 'next/head'
 
 export const eventComing = false
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <RecoilRoot>
-          <BrowserRouter>
-              <Routes>
-                  <Route path='/' errorElement={<ErrorPage/>} element={<App/>}>
-                      <Route index element={<Home />} />
-                      <Route path='gallery' element={<Gallery/>}/>
-                      <Route path='about' element={<About/>}/>
-                      <Route path='events' element={<Events/>}/>
-                  </Route>
-              </Routes>
-          </BrowserRouter>
-      </RecoilRoot>
-  </React.StrictMode>
-);
-serviceWorkerRegistration.unregister();
+export default function index() {
+  return (
+    <>
+        <Head>
+          <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#000000" />
+          <meta
+            name="description"
+            content="Jacob Brown Photos - Canal Winchester, Ohio Professional Photographer. Book me for professional headshots, family photos, senior photos, product photos, pet photos, baby photos, and much more."
+          />
+          <meta name="robots" content="index,follow" />
+          <link rel="apple-touch-icon" href="%PUBLIC_URL%/android-chrome-192x192.png" />
+          <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+          <title>Jacob Brown Photos - Canal Winchester, Ohio Photographer</title>
+        </Head>
+          <Home/>
+    </>
+  )
+}
+
 reportWebVitals();

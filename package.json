@@ -34,25 +34,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "homepage": "https://www.jacobbrownphotos.com/",
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
     "@types/react-router-hash-link": "^2.4.5",
     "eslint": "^8.34.0"

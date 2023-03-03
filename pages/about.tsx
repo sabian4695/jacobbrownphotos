@@ -30,8 +30,23 @@ import IconButton from "@mui/material/IconButton";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Head from 'next/head'
+import Image from 'next/image'
 
 const titles = 'primary.dark'
+
+const keyStr =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+
+const triplet = (e1: number, e2: number, e3: number) =>
+  keyStr.charAt(e1 >> 2) +
+  keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
+  keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
+  keyStr.charAt(e3 & 63)
+
+const rgbDataURL = (r: number, g: number, b: number) =>
+  `data:image/gif;base64,R0lGODlhAQABAPAA${
+    triplet(0, r, g) + triplet(b, 255, 255)
+  }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
 
 export default function About() {
     const [openModal, setOpenModal] = useRecoilState(lightboxOpen)
@@ -103,6 +118,19 @@ export default function About() {
                                             <IconButton component='a' href='https://www.instagram.com/jacobbrown_photos/' target='blank'>
                                                 <InstagramIcon/>
                                             </IconButton>
+                                            <IconButton component='a' href='https://www.zola.com/wedding-vendors/wedding-photographers/jacob-brown-photos?utm_source=vendor&utm_medium=various&utm_content=badge' target='blank'>
+                                                <Image
+                                                        style={{cursor: 'pointer', objectFit:'scale-down', width:'50px', height:'50px'}}
+                                                        src='https://d1tntvpcrzvon2.cloudfront.net/static-assets/images/badges/featured_on_zola_v3.png'
+                                                        alt='Featured on Zola'
+                                                        loading="lazy"
+                                                        height="50"
+                                                        width="50"
+                                                        placeholder='blur'
+                                                        blurDataURL={rgbDataURL(175, 175, 175)}
+                                                    />
+                                            </IconButton>
+                                            
                                         </Grid>
                                     </Grid>
                                     <Typography variant='body1' color='text.secondary'>

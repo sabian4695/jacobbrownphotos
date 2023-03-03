@@ -101,7 +101,7 @@ export default function Gallery() {
                         </Select>
                     </FormControl>
                 </Grid>
-                <Grid xs={12}>
+                <Grid xs={12} style={{lineHeight:0}}>
                     <ImageList sx={{width: '100%'}} cols={small ? 3 : 2} variant='masonry'>
                         {photosList.map((item, index) => (
                                     <Grow

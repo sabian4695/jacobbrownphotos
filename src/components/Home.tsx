@@ -20,22 +20,37 @@ import Button from "@mui/material/Button";
 import Link from 'next/link'
 import InfoIcon from "@mui/icons-material/Info";
 import CameraRollIcon from "@mui/icons-material/CameraRoll";
+import Image from 'next/image'
+
+const keyStr =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+
+const triplet = (e1: number, e2: number, e3: number) =>
+  keyStr.charAt(e1 >> 2) +
+  keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
+  keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
+  keyStr.charAt(e3 & 63)
+
+const rgbDataURL = (r: number, g: number, b: number) =>
+  `data:image/gif;base64,R0lGODlhAQABAPAA${
+    triplet(0, r, g) + triplet(b, 255, 255)
+  }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
 
 const headerPhotos = [
     {
-        img: '/images/engage1.jpeg',
+        img: itemData.find(x => x.title === 'Jeremy and Tiffany')?.img,
         title: 'Engagement Photo',
         category: 'engagement',
     }, {
-        img: '/images/baby0.jpeg',
+        img: itemData.find(x => x.title === 'Baby0')?.img,
         title: 'Baby Photos',
         category: 'baby',
     }, {
-        img: '/images/family12.jpeg',
+        img: itemData.find(x => x.title === 'Family12')?.img,
         title: 'Family Photos',
         category: 'family',
     }, {
-        img: '/images/family7.jpeg',
+        img: itemData.find(x => x.title === 'Timeless Family Photos')?.img,
         title: 'Family Portraits',
         category: 'family',
     }
@@ -43,19 +58,19 @@ const headerPhotos = [
 
 const middlePhotos = [
     {
-        img: '/images/engage0.jpeg',
+        img: itemData.find(x => x.title === 'Engagement Photos')?.img,
         title: 'Engagement Photo',
         category: 'engagement',
     }, {
-        img: '/images/pet0.jpeg',
+        img: itemData.find(x => x.title === 'Pet Photos')?.img,
         title: 'Pet Photos',
         category: 'pet',
     }, {
-        img: '/images/food1.jpeg',
+        img: itemData.find(x => x.title === 'Product Photos')?.img,
         title: 'Product Photos',
         category: 'product',
     }, {
-        img: '/images/family14.jpeg',
+        img: itemData.find(x => x.title === 'Family14')?.img,
         title: 'Family  Photos',
         category: 'family',
     }
@@ -125,7 +140,7 @@ export default function Gallery() {
                 display:'flex',
                 justifyContent:'center',
             }}>
-                <Grid xs={12}>
+                <Grid xs={12} style={{lineHeight:0}}>
                     <ImageList sx={{ width: '100%'}} cols={small ? 2 : 1} variant="masonry">
                         {/*//@ts-ignore*/}
                         {headerPhotos.map((item, index) => (
@@ -135,11 +150,13 @@ export default function Gallery() {
                                 key={item.title}
                             >
                                 <ImageListItem key={item.title}>
-                                    <img
-                                        src={`${item.img}`}
-                                        srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                                    <Image
+                                        style={{objectFit:'scale-down', width:'100%', height:'auto'}}
+                                        src={item.img}
                                         alt={item.title}
                                         loading="lazy"
+                                        placeholder='blur'
+                                        blurDataURL={rgbDataURL(175, 175, 175)}
                                     />
                                 </ImageListItem>
                             </Grow>
@@ -233,7 +250,7 @@ export default function Gallery() {
                 justifyContent:'center',
                 mb:1
             }}>
-                <Grid xs={12}>
+                <Grid xs={12} style={{lineHeight:0}}>
                     <ImageList sx={{ width: '100%'}} cols={small ? 2 : 1} variant="masonry">
                         {/*//@ts-ignore*/}
                         {middlePhotos.map((item, index) => (
@@ -243,11 +260,13 @@ export default function Gallery() {
                                 key={item.title}
                             >
                                 <ImageListItem key={item.title}>
-                                    <img
-                                        src={`${item.img}`}
-                                        srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                                    <Image
+                                        style={{objectFit:'scale-down', width:'100%', height:'auto'}}
+                                        src={item.img}
                                         alt={item.title}
                                         loading="lazy"
+                                        placeholder='blur'
+                                        blurDataURL={rgbDataURL(175, 175, 175)}
                                     />
                                 </ImageListItem>
                             </Grow>

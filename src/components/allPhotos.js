@@ -25,6 +25,7 @@ import general2 from '../../public/images/general2.jpeg'
 import general3 from '../../public/images/general3.jpeg'
 import general4 from '../../public/images/general4.jpeg'
 import general5 from '../../public/images/general5.jpeg'
+import general6 from '../../public/images/general6.jpeg'
 import pet0 from '../../public/images/pet0.jpeg'
 import graduate0 from '../../public/images/graduate0.jpeg'
 import graduate1 from '../../public/images/graduate1.jpeg'
@@ -160,6 +161,11 @@ export const itemData = [
     {
         img: general5,
         title: 'General5',
+        category: 'general',
+    },
+    {
+        img: general6,
+        title: 'Nature Photography',
         category: 'general',
     },
     {

@@ -228,9 +228,6 @@ export default function About() {
                                                     starting at
                                                 </Typography>
                                                 <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$150</Avatar>
-                                                <Typography variant='body2' sx={{ fontWeight: '400'}} color='text.secondary'>
-                                                    /hr
-                                                </Typography>
                                             </Stack>
                                         </Stack>
                                         <Grid container direction='row' spacing={1}>
@@ -274,9 +271,6 @@ export default function About() {
                                                     starting at
                                                 </Typography>
                                                 <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$200</Avatar>
-                                                <Typography variant='body2' sx={{ fontWeight: '400'}} color='text.secondary'>
-                                                    /hr
-                                                </Typography>
                                             </Stack>
                                         </Stack>
                                         <Grid container direction='row' spacing={1}>

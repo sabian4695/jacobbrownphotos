@@ -38,7 +38,7 @@ export default function About() {
                         in={true}
                         {...({ timeout: 400 })}
                     >
-                        <Card id='about' elevation={3} sx={{maxWidth: 400, borderRadius:'15px', alignSelf:'center', justifySelf:'center'}}>
+                        <Card id='about' elevation={5} sx={{maxWidth: 400, borderRadius:'15px', alignSelf:'center', justifySelf:'center'}}>
                             <CardMedia
                                 component="img"
                                 src='/images/headshot0.jpeg'
@@ -53,7 +53,7 @@ export default function About() {
                                         <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$75</Avatar>
                                     </Stack>
                                     <Chip
-                                        label='Feb 18th, 2023 | 1PM - 4PM'
+                                        label='May 27th, 2023 | 9:30AM - 12:30PM'
                                         icon={<EventIcon/>}
                                         color='secondary'
                                         variant='outlined'
@@ -65,10 +65,10 @@ export default function About() {
                                         and much more.
                                     </Typography>
                                     <Typography variant='body1' color='text.secondary'>
-                                        I'm offering mini 15 - minute sessions from 1-4PM. There aren't many spots, so sign up now!
+                                        I'm offering mini 15 - minute sessions from 9:30AM-12:30PM. There aren't many spots, so sign up now!
                                     </Typography>
                                     <Typography variant='subtitle2' color='text.secondary'>
-                                        I'll be offering two backdrops - grey and brick.
+                                        Photos will use a grey backdrop
                                     </Typography>
                                     <Typography variant='body1' color='text.secondary'>
                                         Grab a spot via the link below

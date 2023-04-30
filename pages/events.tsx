@@ -39,11 +39,7 @@ export default function About() {
                         {...({ timeout: 400 })}
                     >
                         <Card id='about' elevation={5} sx={{maxWidth: 400, borderRadius:'15px', alignSelf:'center', justifySelf:'center'}}>
-                            <CardMedia
-                                component="img"
-                                src='/images/headshot0.jpeg'
-                                title="headshot0"
-                            />
+                            
                             <CardContent>
                                 <Stack spacing={1}>
                                     <Stack direction="row" justifyContent='space-between' alignItems='center'>

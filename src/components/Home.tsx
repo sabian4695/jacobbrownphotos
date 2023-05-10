@@ -175,7 +175,7 @@ export default function Gallery() {
                         variant={small ? 'h3' : 'h4'}
                         color='text.secondary'
                     >
-                        Canal Winchester, Ohio Photographer
+                        Canal Winchester, Ohio Photographer / Videographer
                     </Typography>
                 </Grid>
                 <Grid container direction='row' spacing={1} sx={{display:'flex', justifyContent:'center'}}>
@@ -190,18 +190,9 @@ export default function Gallery() {
                     </Grid>
                     <Grid xs='auto'>
                         <Chip
-                            onClick={() => chipClick('family')}
-                            clickable
                             variant='filled'
                             color='secondary'
-                            label="family photos"
-                            icon={<FamilyRestroomIcon />}/>
-                    </Grid>
-                    <Grid xs='auto'>
-                        <Chip
-                            variant='filled'
-                            color='secondary'
-                            label="weddings / events"
+                            label="events"
                             icon={<FestivalIcon />}/>
                     </Grid>
                     <Grid xs='auto'>
@@ -230,7 +221,7 @@ export default function Gallery() {
                             variant='body1'
                             color='text.primary'
                         >
-                            Jacob Brown Photos is a Canal Winchester, Ohio Photographer specializing in professional headshots, family photos, and product photos.
+                            Jacob Brown Photos is a Canal Winchester, Ohio Photographer and Videographer specializing in professional headshots and other business photography and videography.
                         </Typography>
                     </Grid>
                     <Grid>
@@ -239,7 +230,7 @@ export default function Gallery() {
                             variant='body2'
                             color='text.secondary'
                         >
-                            Create photos that capture an experience. Look back and feel that moment.
+                            Good media and online presence can help your business grow!
                         </Typography>
                     </Grid>
                 </Grid>

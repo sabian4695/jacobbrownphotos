@@ -10,15 +10,11 @@ import family4 from '../../public/images/family4.jpeg'
 import family5 from '../../public/images/family5.jpeg'
 import family6 from '../../public/images/family6.jpeg'
 import family7 from '../../public/images/family7.jpeg'
-import family8 from '../../public/images/family8.jpeg'
-import family9 from '../../public/images/family9.jpeg'
 import family11 from '../../public/images/family11.jpeg'
 import family12 from '../../public/images/family12.jpeg'
 import family13 from '../../public/images/family13.jpeg'
 import family14 from '../../public/images/family14.jpeg'
 import baby0 from '../../public/images/baby0.jpeg'
-import baby1 from '../../public/images/baby1.jpeg'
-import baby2 from '../../public/images/baby2.jpeg'
 import general0 from '../../public/images/general0.jpeg'
 import general1 from '../../public/images/general1.jpeg'
 import general2 from '../../public/images/general2.jpeg'
@@ -96,16 +92,6 @@ export const itemData = [
     {
         img: family7,
         title: 'Timeless Family Photos',
-        category: 'family',
-    },
-    {
-        img: family8,
-        title: 'Sweet Baby Pictures',
-        category: 'family',
-    },
-    {
-        img: family9,
-        title: 'Family9',
         category: 'family',
     },
     {
@@ -208,15 +194,5 @@ export const itemData = [
         img: food1,
         title: 'Product Photos',
         category: 'product',
-    },
-    {
-        img: baby1,
-        title: 'Baby1',
-        category: 'baby',
-    },
-    {
-        img: baby2,
-        title: 'Baby2',
-        category: 'baby',
     },
 ];

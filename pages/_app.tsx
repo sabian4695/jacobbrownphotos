@@ -183,7 +183,7 @@ export default function App({ Component, pageProps }) {
         </Menu>
         <Snackbar open={openSnack} autoHideDuration={6000} onClose={handleCloseSnack}>
           <Alert onClose={handleCloseSnack} severity="info" sx={{ width: '100%' }}>
-            Hey, there's a headshot event coming up on 02/18/23
+            Hey, there's a headshot event coming up on May 27th!
             <Button sx={{mx:1}} color='inherit' variant='outlined' size='small' component={Link} href="events">CLICK HERE</Button>
             to learn more!
           </Alert>

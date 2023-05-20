@@ -3,7 +3,7 @@ import Home from '../src/components/Home';
 import reportWebVitals from '../src/reportWebVitals';
 import Head from 'next/head'
 
-export const eventComing = true
+export const eventComing = false
 
 export default function index() {
   return (

@@ -14,12 +14,12 @@ export default function index() {
           <meta name="theme-color" content="#000000" />
           <meta
             name="description"
-            content="Jacob Brown Photos - Canal Winchester, Ohio Professional Photographer. Book me for professional headshots, family photos, senior photos, product photos, pet photos, baby photos, and much more."
+            content="Jacob Brown Photos - Canal Winchester, Ohio Professional Photographer / Videographer. Book me for professional headshots, family photos, senior photos, product photos, pet photos, baby photos, and much more."
           />
           <meta name="robots" content="index,follow" />
           <link rel="apple-touch-icon" href="%PUBLIC_URL%/android-chrome-192x192.png" />
           <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-          <title>Jacob Brown Photos - Canal Winchester, Ohio Photographer</title>
+          <title>Jacob Brown Photos - Canal Winchester, Ohio Photographer / Videographer</title>
         </Head>
           <Home/>
     </>

@@ -88,7 +88,7 @@ export default function Gallery() {
         setOpenModal(true)
     }
     React.useEffect(() => {
-        document.title = 'Jacob Brown Photos - Canal Winchester, Ohio Photographer';
+        document.title = 'Jacob Brown Photos - Canal Winchester, Ohio Photographer / Videographer';
     }, []);
     React.useEffect(() => {
         if(filtVal !== '') {
@@ -221,7 +221,7 @@ export default function Gallery() {
                             variant='body1'
                             color='text.primary'
                         >
-                            Jacob Brown Photos is a Canal Winchester, Ohio Photographer and Videographer specializing in professional headshots and other business photography and videography.
+                            Jacob Brown Photos is a Canal Winchester, Ohio Photographer and Videographer specializing in professional headshots and wedding photography and videography.
                         </Typography>
                     </Grid>
                     <Grid>
@@ -230,7 +230,7 @@ export default function Gallery() {
                             variant='body2'
                             color='text.secondary'
                         >
-                            Good media and online presence can help your business grow!
+                            Whether you want to look back on photos and feel what you felt in that moment, or have professional content for your growing business, I can help you get there.
                         </Typography>
                     </Grid>
                 </Grid>

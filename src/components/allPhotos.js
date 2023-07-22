@@ -32,6 +32,15 @@ import headshot1 from '../../public/images/headshot1.jpeg'
 import portrait0 from '../../public/images/portrait0.jpeg'
 import food0 from '../../public/images/food0.jpeg'
 import food1 from '../../public/images/food1.jpeg'
+import event1 from '../../public/images/event1.jpeg'
+import event2 from '../../public/images/event2.jpeg'
+import event3 from '../../public/images/event3.jpeg'
+import event4 from '../../public/images/event4.jpeg'
+import event5 from '../../public/images/event5.jpeg'
+import event6 from '../../public/images/event6.jpeg'
+import event7 from '../../public/images/event7.jpeg'
+import event8 from '../../public/images/event8.jpeg'
+import event9 from '../../public/images/event9.jpeg'
 
 export const itemData = [
     {
@@ -194,5 +203,41 @@ export const itemData = [
         img: food1,
         title: 'Product Photos',
         category: 'product',
+    },{
+        img: event1,
+        title: 'Wedding Photo',
+        category: 'event',
+    },{
+        img: event2,
+        title: 'Wedding Photo',
+        category: 'event',
+    },{
+        img: event3,
+        title: 'Wedding Photo',
+        category: 'event',
+    },{
+        img: event4,
+        title: 'Wedding Photo',
+        category: 'event',
+    },{
+        img: event5,
+        title: 'Wedding Photo',
+        category: 'event',
+    },{
+        img: event6,
+        title: 'Wedding Photo',
+        category: 'event',
+    },{
+        img: event7,
+        title: 'Wedding Photo',
+        category: 'event',
+    },{
+        img: event8,
+        title: 'Wedding Photo',
+        category: 'event',
+    },{
+        img: event9,
+        title: 'Wedding Photo',
+        category: 'event',
     },
 ];

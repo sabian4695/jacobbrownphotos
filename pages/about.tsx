@@ -27,6 +27,10 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Head from 'next/head'
 import Image from 'next/image'
+import CakeIcon from '@mui/icons-material/Cake';
+import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ChildFriendlyIcon from '@mui/icons-material/ChildFriendly';
 
 const titles = 'primary.dark'
 
@@ -78,12 +82,12 @@ export default function About() {
                 <meta name="theme-color" content="#000000" />
                 <meta
                     name="description"
-                    content="Jacob Brown Photos - Canal Winchester, Ohio Professional Photographer. Book me for professional headshots, family photos, senior photos, product photos, pet photos, baby photos, and much more."
+                    content="Jacob Brown Photos - Canal Winchester, Ohio Professional Photographer / Videographer. Book me for professional headshots, family photos, senior photos, product photos, pet photos, baby photos, and much more."
                 />
                 <meta name="robots" content="index,follow" />
                 <link rel="apple-touch-icon" href="%PUBLIC_URL%/android-chrome-192x192.png" />
                 <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-                <title>ABOUT | Jacob Brown Photos - Canal Winchester, Ohio Photographer</title>
+                <title>ABOUT | Jacob Brown Photos - Canal Winchester, Ohio Photographer / Videographer</title>
             </Head>
             <Grid container spacing={2} sx={{ m: 1 }}>
                 <Grid xs={12} md={6} lg={4} sx={{ mb: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -132,10 +136,13 @@ export default function About() {
                                         I've been taking photos and making videos since I got my first phone. I really started to develop my skills in 2017 with my first DSLR.
                                     </Typography>
                                     <Typography variant='body1' color='text.secondary'>
-                                        I started this professionally so I can help small businesses improve their online presence. I love so many businesses around here and hope I can help your business thrive.
+                                        I started this professionally for two reasons: so I can help small businesses improve their online presence, and so I can help people have moments they can look back on with love. I love local businesses and believe photography can affect growth dramatically.
                                     </Typography>
                                     <Typography variant='body1' color='text.secondary'>
-                                        Though my work may be very good, I'm just starting out professionally. So, for a short time my rates will seem pretty low to most.
+                                        This is my side business. I work full time as an engineer in the automotive industry. I believe my engineering background gives me a very methodical approach to photography. I know the in's and out's of how my cameras/lenses work and feel that gives me a unique take on capturing powerful moments technically.
+                                    </Typography>
+                                    <Typography variant='body1' color='text.secondary'>
+                                        If you're curious, I use Canon cameras. I prefer their skin tones straight out of camera and I have the best luck with their colors. Mainly just a personal preference, to be honest.  I'm still using DSLRs, mainly because of how tried and true they are. It also doesn't hurt that mirrorless cameras require a large investment to switch.
                                     </Typography>
                                     <div>
                                         <Typography variant='body1' sx={{ fontWeight: '400' }} color='text.secondary'>
@@ -188,14 +195,36 @@ export default function About() {
                             >
                                 <Paper elevation={3} sx={{ p: 1, borderRadius: '15px' }}>
                                     <Typography variant='h5' component='h2' sx={{ fontWeight: '600' }} color={titles}>
-                                        Styling
+                                        Styling and What to Expect
                                     </Typography>
                                     <Typography variant='subtitle1' sx={{ fontWeight: '400' }} id='pricing' color='text.secondary'>
-                                        clean / natural
+                                        if you need something specific, please reach out and let's talk
+                                    </Typography>
+                                    <Typography variant='subtitle2' color='text.secondary' sx={{mt:1}}>
+                                        Photography Style
                                     </Typography>
                                     <Typography variant='body1' color='text.secondary'>
-                                        My style is generally a clean and natural look. This involves lots of prep/setup, color correcting, and some general editing afterward.
-                                        You can expect a turnaround of 2-5 days depending on number of photos and complexity.
+                                        My style is generally a clean and natural look. This involves lots of prep/setup on the front end, then color correcting and slight general editing. I tend to not heavily color grade my photos. If you're looking for a specific style, let me know and we can talk.
+                                    </Typography>
+                                    <Typography variant='subtitle2' color='text.secondary' sx={{mt:1}}>
+                                        Videography Style
+                                    </Typography>
+                                    <Typography variant='body1' color='text.secondary'>
+                                        It depends. Wedding videos and short films, I usually prefer a filmic, timeless look with a light general color grade. For business promotionals, these are usually bright and polished. We will work out the details before shooting.
+                                    </Typography>
+                                    <Typography variant='subtitle2' color='text.secondary' sx={{mt:1}}>
+                                        How you'll get the product
+                                    </Typography>
+                                    <Typography variant='body1' color='text.secondary'>
+                                        Photo deliveries are through an online gallery. Video deliveries may be through Google Drive, YouTube, or OneDrive if the file size is very large.
+                                    </Typography>
+                                    <Typography variant='subtitle2' color='text.secondary' sx={{mt:1}}>
+                                        When you'll get the product
+                                    </Typography>
+                                    <Typography variant='body1' color='text.secondary'>
+                                        For small sessions, usually my turnaround time is under a week.
+                                        For large events / weddings you can expect two weeks. We will work out these details per session.
+                                        Turnaround time on videos can be longer depending on what it is. Weddings generally take two weeks.
                                     </Typography>
                                 </Paper>
                             </Grow>
@@ -207,15 +236,136 @@ export default function About() {
                             >
                                 <Paper elevation={3} sx={{ p: 1, borderRadius: '15px' }}>
                                     <Typography variant='h5' component='h2' sx={{ fontWeight: '600' }} color={titles}>
-                                        Pricing
+                                        Session Information
+                                    </Typography>
+                                    <Typography variant='subtitle2' color='text.secondary' sx={{mt:1}}>
+                                        Pricing this kind of work is very challenging...
+                                    </Typography>
+                                    <Typography variant='body1' color='text.secondary'>
+                                        It depends how long of a session you want, how long the video needs to be, where the location is, what turnaround time do you need, etc.
+                                    </Typography>
+                                    <Typography variant='body1' color='text.secondary'>
+                                        The prices below are just a starting point for you to reference and compare to other people. If you want an actual estimate, please reach out and I can give you an estimate quickly.
                                     </Typography>
                                     <Stack spacing={0}>
                                         <Stack direction="row" justifyContent='space-between' alignItems='center'>
-                                            <Typography variant='subtitle1' sx={{ fontWeight: '400' }} id='pricing' color='text.secondary'>
-                                                General
+                                            <Typography variant='subtitle1' sx={{ fontWeight: '400'}} id='pricing' color='text.secondary'>
+                                                Individuals
                                             </Typography>
                                             <Stack direction='row' alignItems='center' spacing={1}>
-                                                <Typography variant='body2' sx={{ fontWeight: '400' }} id='pricing' color='text.disabled'>
+                                                <Typography variant='body2' sx={{ fontWeight: '400'}} id='pricing' color='text.disabled'>
+                                                    starting at
+                                                </Typography>
+                                                <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$150</Avatar>
+                                            </Stack>
+                                        </Stack>
+                                        <Grid container direction='row' spacing={1}>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('baby')}
+                                                    clickable
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="baby photos"
+                                                    icon={<ChildFriendlyIcon />}/>
+                                            </Grid>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('pet')}
+                                                    clickable
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="pet photos"
+                                                    icon={<PetsIcon />}/>
+                                            </Grid>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('portrait')}
+                                                    clickable
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="senior / general portraits"
+                                                    icon={<FaceIcon />}/>
+                                            </Grid>
+                                        </Grid>
+                                    </Stack>
+                                    <Divider sx={{my:1}}/>
+                                    <Stack spacing={0}>
+                                        <Stack direction="row" justifyContent='space-between' alignItems='center'>
+                                            <Typography variant='subtitle1' sx={{ fontWeight: '400'}} id='pricing' color='text.secondary'>
+                                                Groups
+                                            </Typography>
+                                            <Stack direction='row' alignItems='center' spacing={1}>
+                                                <Typography variant='body2' sx={{ fontWeight: '400'}} id='pricing' color='text.disabled'>
+                                                    starting at
+                                                </Typography>
+                                                <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$200</Avatar>
+                                            </Stack>
+                                        </Stack>
+                                        <Grid container direction='row' spacing={1}>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('family')}
+                                                    clickable
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="family photos"
+                                                    icon={<FamilyRestroomIcon />}/>
+                                            </Grid>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('engagement')}
+                                                    clickable
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="engagement photos"
+                                                    icon={<FavoriteIcon />}/>
+                                            </Grid>
+                                        </Grid>
+                                    </Stack>
+                                    <Divider sx={{my:1}}/>
+                                    <Stack spacing={0}>
+                                        <Stack direction="row" justifyContent='space-between' alignItems='center'>
+                                            <Typography variant='subtitle1' sx={{ fontWeight: '400'}} id='pricing' color='text.secondary'>
+                                                Events
+                                            </Typography>
+                                            <Stack direction='row' alignItems='center' spacing={1}>
+                                                <Typography variant='body2' sx={{ fontWeight: '400'}} id='pricing' color='text.disabled'>
+                                                    starting at
+                                                </Typography>
+                                                <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$300</Avatar>
+                                                <Typography variant='body2' sx={{ fontWeight: '400'}} color='text.secondary'>
+                                                    /hr
+                                                </Typography>
+                                            </Stack>
+                                        </Stack>
+                                        <Grid container direction='row' spacing={1}>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('event')}
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="wedding photos / video"
+                                                    icon={<CakeIcon />}/>
+                                            </Grid>
+                                            <Grid xs='auto'>
+                                                <Chip
+                                                    onClick={() => chipClick('event')}
+                                                    variant='outlined'
+                                                    color='secondary'
+                                                    label="event photos / video"
+                                                    icon={<FestivalIcon />}/>
+                                            </Grid>
+                                        </Grid>
+                                    </Stack>
+                                    <Divider sx={{my:1}}/>
+                                    <Stack spacing={0}>
+                                        <Stack direction="row" justifyContent='space-between' alignItems='center'>
+                                            <Typography variant='subtitle1' sx={{ fontWeight: '400'}} id='pricing' color='text.secondary'>
+                                                Other
+                                            </Typography>
+                                            <Stack direction='row' alignItems='center' spacing={1}>
+                                                <Typography variant='body2' sx={{ fontWeight: '400'}} id='pricing' color='text.disabled'>
                                                     starting at
                                                 </Typography>
                                                 <Avatar sx={{ bgcolor: 'primary.main', width: 50, height: 50 }}>$100</Avatar>
@@ -229,7 +379,7 @@ export default function About() {
                                                     variant='outlined'
                                                     color='secondary'
                                                     label="professional headshot"
-                                                    icon={<WorkIcon />} />
+                                                    icon={<WorkIcon />}/>
                                             </Grid>
                                             <Grid xs='auto'>
                                                 <Chip
@@ -238,43 +388,7 @@ export default function About() {
                                                     variant='outlined'
                                                     color='secondary'
                                                     label="product photos"
-                                                    icon={<CategoryIcon />} />
-                                            </Grid>
-
-                                            <Grid xs='auto'>
-                                                <Chip
-                                                    onClick={() => chipClick('pet')}
-                                                    clickable
-                                                    variant='outlined'
-                                                    color='secondary'
-                                                    label="pet photos"
-                                                    icon={<PetsIcon />} />
-                                            </Grid>
-                                            <Grid xs='auto'>
-                                                <Chip
-                                                    onClick={() => chipClick('portrait')}
-                                                    clickable
-                                                    variant='outlined'
-                                                    color='secondary'
-                                                    label="senior / general portraits"
-                                                    icon={<FaceIcon />} />
-                                            </Grid>
-                                        </Grid>
-                                    </Stack>
-                                    <Divider sx={{ my: 1 }} />
-                                    <Stack spacing={0}>
-                                        <Stack direction="row" justifyContent='space-between' alignItems='center'>
-                                            <Typography variant='subtitle1' sx={{ fontWeight: '400' }} id='pricing' color='text.secondary'>
-                                                Misc
-                                            </Typography>
-                                        </Stack>
-                                        <Grid container direction='row' spacing={1}>
-                                            <Grid xs='auto'>
-                                                <Chip
-                                                    variant='outlined'
-                                                    color='secondary'
-                                                    label="event photos"
-                                                    icon={<FestivalIcon />} />
+                                                    icon={<CategoryIcon />}/>
                                             </Grid>
                                             <Grid xs='auto'>
                                                 <Chip
@@ -283,7 +397,7 @@ export default function About() {
                                                     variant='outlined'
                                                     color='secondary'
                                                     label="Other - let's talk!"
-                                                    icon={<BlurOnIcon />} />
+                                                    icon={<BlurOnIcon />}/>
                                             </Grid>
                                         </Grid>
                                     </Stack>

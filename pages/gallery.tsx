@@ -70,12 +70,12 @@ export default function Gallery() {
           <meta name="theme-color" content="#000000" />
           <meta
             name="description"
-            content="Jacob Brown Photos - Canal Winchester, Ohio Professional Photographer. Book me for professional headshots, family photos, senior photos, product photos, pet photos, baby photos, and much more."
+            content="Jacob Brown Photos - Canal Winchester, Ohio Professional Photographer / Videographer. Book me for professional headshots, family photos, senior photos, product photos, pet photos, baby photos, and much more."
           />
           <meta name="robots" content="index,follow" />
           <link rel="apple-touch-icon" href="%PUBLIC_URL%/android-chrome-192x192.png" />
           <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-          <title>GALLERY | Jacob Brown Photos - Canal Winchester, Ohio Photographer</title>
+          <title>GALLERY | Jacob Brown Photos - Canal Winchester, Ohio Photographer / Videographer</title>
         </Head>
             <Grid container>
                 <Grid xs={12} sx={{display:'flex', justifyContent:'center'}}>
@@ -90,6 +90,7 @@ export default function Gallery() {
                                 <em>See All</em>
                             </MenuItem>
                             <MenuItem value={'engagement'}>Engagement</MenuItem>
+                            <MenuItem value={'event'}>Events</MenuItem>
                             <MenuItem value={'family'}>Family</MenuItem>
                             <MenuItem value={'portrait'}>Portrait</MenuItem>
                             <MenuItem value={'baby'}>Baby</MenuItem>

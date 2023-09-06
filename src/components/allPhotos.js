@@ -205,39 +205,39 @@ export const itemData = [
         category: 'product',
     },{
         img: event1,
-        title: 'Wedding Photo',
+        title: 'Couple Photo Looking at Each Other',
         category: 'event',
     },{
         img: event2,
-        title: 'Wedding Photo',
+        title: 'Siblings Cheek Kissing',
         category: 'event',
     },{
         img: event3,
-        title: 'Wedding Photo',
+        title: 'Wedding Couple',
         category: 'event',
     },{
         img: event4,
-        title: 'Wedding Photo',
+        title: 'Wedding Arch',
         category: 'event',
     },{
         img: event5,
-        title: 'Wedding Photo',
+        title: 'Bride Gazing out Window',
         category: 'event',
     },{
         img: event6,
-        title: 'Wedding Photo',
+        title: 'Getting Ready',
         category: 'event',
     },{
         img: event7,
-        title: 'Wedding Photo',
+        title: 'Bride Tying Shoes',
         category: 'event',
     },{
         img: event8,
-        title: 'Wedding Photo',
+        title: 'Wedding Rings Detail',
         category: 'event',
     },{
         img: event9,
-        title: 'Wedding Photo',
+        title: 'Wedding Dress on Window',
         category: 'event',
     },
 ];

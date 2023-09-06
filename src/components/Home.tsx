@@ -38,9 +38,9 @@ const rgbDataURL = (r: number, g: number, b: number) =>
 
 const headerPhotos = [
     {
-        img: itemData.find(x => x.title === 'Jeremy and Tiffany')?.img,
-        title: 'Engagement Photo',
-        category: 'engagement',
+        img: itemData.find(x => x.title === 'Siblings Cheek Kissing')?.img,
+        title: 'Siblings Cheek Kissing',
+        category: 'event',
     }, {
         img: itemData.find(x => x.title === 'Baby0')?.img,
         title: 'Baby Photos',
@@ -70,9 +70,9 @@ const middlePhotos = [
         title: 'Product Photos',
         category: 'product',
     }, {
-        img: itemData.find(x => x.title === 'Family14')?.img,
-        title: 'Family  Photos',
-        category: 'family',
+        img: itemData.find(x => x.title === 'Wedding Rings Detail')?.img,
+        title: 'Wedding Rings Detail',
+        category: 'event',
     }
 ]
 

@@ -16,6 +16,7 @@ import {useRecoilState, useSetRecoilState} from "recoil";
 import {itemData} from "../src/components/allPhotos";
 import Head from 'next/head'
 import Image from 'next/image'
+import Button from '@mui/material/Button';
 
 const keyStr =
   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
@@ -78,29 +79,37 @@ export default function Gallery() {
           <title>GALLERY | Jacob Brown Photos - Canal Winchester, Ohio Photographer / Videographer</title>
         </Head>
             <Grid container>
-                <Grid xs={12} sx={{display:'flex', justifyContent:'center'}}>
-                    <FormControl variant="standard" sx={{ m: 1, minWidth: 250 }}>
-                        <InputLabel>Filter Pictures</InputLabel>
-                        <Select
-                            value={filtVal}
-                            onChange={(event: SelectChangeEvent) => setFiltValue(event.target.value)}
-                            label="Filter"
-                        >
-                            <MenuItem value=''>
-                                <em>See All</em>
-                            </MenuItem>
-                            <MenuItem value={'engagement'}>Engagement</MenuItem>
-                            <MenuItem value={'event'}>Events</MenuItem>
-                            <MenuItem value={'family'}>Family</MenuItem>
-                            <MenuItem value={'portrait'}>Portrait</MenuItem>
-                            <MenuItem value={'baby'}>Baby</MenuItem>
-                            <MenuItem value={'pet'}>Pet</MenuItem>
-                            <MenuItem value={'graduate'}>Graduate</MenuItem>
-                            <MenuItem value={'product'}>Product</MenuItem>
-                            <MenuItem value={'headshot'}>Headshots</MenuItem>
-                            <MenuItem value={'general'}>General</MenuItem>
-                        </Select>
-                    </FormControl>
+                <Grid container xs={12} sx={{display:'flex', justifyContent:'center'}}>
+                    <Grid xs='auto' sx={{display:'flex', justifyContent:'center'}}>
+                        <Button variant="outlined" target="blank" href="https://drive.google.com/drive/folders/1iWHJmfvosjarLbD60_S2w9NkcqRyTff8?usp=sharing">
+                            See Full Galleries
+                        </Button>
+                    </Grid>
+                    <Grid xs='auto' sx={{display:'flex'}}>
+                        <FormControl variant="standard" sx={{ my: 1, mx:4, minWidth: 250 }}>
+                            <InputLabel>Filter Pictures</InputLabel>
+                            <Select
+                                value={filtVal}
+                                onChange={(event: SelectChangeEvent) => setFiltValue(event.target.value)}
+                                label="Filter"
+                            >
+                                <MenuItem value=''>
+                                    <em>See All</em>
+                                </MenuItem>
+                                <MenuItem value={'engagement'}>Engagement</MenuItem>
+                                <MenuItem value={'event'}>Events/Weddings</MenuItem>
+                                <MenuItem value={'family'}>Family</MenuItem>
+                                <MenuItem value={'portrait'}>Portrait</MenuItem>
+                                <MenuItem value={'baby'}>Baby</MenuItem>
+                                <MenuItem value={'pet'}>Pet</MenuItem>
+                                <MenuItem value={'graduate'}>Graduate</MenuItem>
+                                <MenuItem value={'product'}>Product</MenuItem>
+                                <MenuItem value={'headshot'}>Headshots</MenuItem>
+                                <MenuItem value={'general'}>General</MenuItem>
+                            </Select>
+                            
+                        </FormControl>
+                    </Grid>
                 </Grid>
                 <Grid xs={12} style={{lineHeight:0}}>
                     <ImageList sx={{width: '100%'}} cols={small ? 3 : 2} variant='masonry'>

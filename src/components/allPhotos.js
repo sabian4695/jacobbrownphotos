@@ -22,6 +22,8 @@ import general3 from '../../public/images/general3.jpeg'
 import general4 from '../../public/images/general4.jpeg'
 import general5 from '../../public/images/general5.jpeg'
 import general6 from '../../public/images/general6.jpeg'
+import general7 from '../../public/images/general7.jpeg'
+import general8 from '../../public/images/general8.jpeg'
 import pet0 from '../../public/images/pet0.jpeg'
 import graduate0 from '../../public/images/graduate0.jpeg'
 import graduate1 from '../../public/images/graduate1.jpeg'
@@ -41,6 +43,13 @@ import event6 from '../../public/images/event6.jpeg'
 import event7 from '../../public/images/event7.jpeg'
 import event8 from '../../public/images/event8.jpeg'
 import event9 from '../../public/images/event9.jpeg'
+import event10 from '../../public/images/event10.jpeg'
+import event11 from '../../public/images/event11.jpeg'
+import event12 from '../../public/images/event12.jpeg'
+import event13 from '../../public/images/event13.jpeg'
+import event14 from '../../public/images/event14.jpeg'
+import event15 from '../../public/images/event15.jpeg'
+import event16 from '../../public/images/event16.jpeg'
 
 export const itemData = [
     {
@@ -162,6 +171,14 @@ export const itemData = [
         img: general6,
         title: 'Nature Photography',
         category: 'general',
+    },{
+        img: general7,
+        title: 'Event Space',
+        category: 'general',
+    },{
+        img: general8,
+        title: 'Cake',
+        category: 'general',
     },
     {
         img: pet0,
@@ -238,6 +255,34 @@ export const itemData = [
     },{
         img: event9,
         title: 'Wedding Dress on Window',
+        category: 'event',
+    },{
+        img: event10,
+        title: 'Couple Photo Outside',
+        category: 'event',
+    },{
+        img: event11,
+        title: 'First Dance',
+        category: 'event',
+    },{
+        img: event12,
+        title: 'Mother Son Dance',
+        category: 'event',
+    },{
+        img: event13,
+        title: 'Couple Picture',
+        category: 'event',
+    },{
+        img: event14,
+        title: 'Father Walking Daughter Down the Isle',
+        category: 'event',
+    },{
+        img: event15,
+        title: 'First Kiss',
+        category: 'event',
+    },{
+        img: event16,
+        title: 'Reception Empty',
         category: 'event',
     },
 ];

@@ -42,25 +42,25 @@ const headerPhotos = [
         title: 'Siblings Cheek Kissing',
         category: 'event',
     }, {
-        img: itemData.find(x => x.title === 'Baby0')?.img,
-        title: 'Baby Photos',
-        category: 'baby',
+        img: itemData.find(x => x.title === 'Wedding Couple')?.img,
+        title: 'Wedding Couple',
+        category: 'event',
     }, {
         img: itemData.find(x => x.title === 'Family12')?.img,
         title: 'Family Photos',
         category: 'family',
     }, {
-        img: itemData.find(x => x.title === 'Timeless Family Photos')?.img,
-        title: 'Family Portraits',
-        category: 'family',
+        img: itemData.find(x => x.title === 'Father Walking Daughter Down the Isle')?.img,
+        title: 'Father Daughter',
+        category: 'event',
     }
 ]
 
 const middlePhotos = [
     {
-        img: itemData.find(x => x.title === 'Engagement Photos')?.img,
-        title: 'Engagement Photo',
-        category: 'engagement',
+        img: itemData.find(x => x.title === 'Cake')?.img,
+        title: 'Wedding Cake',
+        category: 'general',
     }, {
         img: itemData.find(x => x.title === 'Pet Photos')?.img,
         title: 'Pet Photos',

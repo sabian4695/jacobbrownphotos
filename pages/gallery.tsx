@@ -127,7 +127,7 @@ export default function Gallery() {
                                                     alt={item.title}
                                                     loading="lazy"
                                                     placeholder='blur'
-                                                    blurDataURL={rgbDataURL(175, 175, 175)}
+                                                    //blurDataURL={rgbDataURL(175, 175, 175)}
                                                 />
                                         </ImageListItem>
                                     </Grow>

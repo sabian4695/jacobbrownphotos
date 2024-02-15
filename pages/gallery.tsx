@@ -111,7 +111,7 @@ export default function Gallery() {
                         </FormControl>
                     </Grid>
                 </Grid>
-                <Grid xs={12} style={{lineHeight:0}}>
+                <Grid xs={12} style={{lineHeight:0}} sx={{overflow: 'hidden'}}>
                     <ImageList sx={{width: '100%'}} cols={small ? 3 : 2} variant='masonry'>
                         {photosList.map((item, index) => (
                                     <Grow
@@ -121,13 +121,12 @@ export default function Gallery() {
                                     >
                                         <ImageListItem key={index}>
                                                 <Image
-                                                    style={{cursor: 'pointer', objectFit:'scale-down', width:'100%', height:'auto'}}
+                                                    style={{cursor: 'pointer', objectFit:'contain', width:'100%', height:'auto'}}
                                                     onClick={() => openImage(index)}
                                                     src={item.img}
                                                     alt={item.title}
                                                     loading="lazy"
                                                     placeholder='blur'
-                                                    blurDataURL={rgbDataURL(175, 175, 175)}
                                                 />
                                         </ImageListItem>
                                     </Grow>

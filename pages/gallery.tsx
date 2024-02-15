@@ -121,7 +121,7 @@ export default function Gallery() {
                                     >
                                         <ImageListItem key={index}>
                                                 <Image
-                                                    style={{cursor: 'pointer', objectFit:'scale-down', width:'100%', height:'auto'}}
+                                                    style={{cursor: 'pointer', objectFit:'contain', width:'100%', height:'auto'}}
                                                     onClick={() => openImage(index)}
                                                     src={item.img}
                                                     alt={item.title}

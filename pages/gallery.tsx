@@ -112,7 +112,7 @@ export default function Gallery() {
                     </Grid>
                 </Grid>
                 <Grid xs={12} style={{lineHeight:0}} sx={{overflow: 'hidden'}}>
-                    <ImageList sx={{width: '100%'}} cols={small ? 3 : 2} variant='quilted'>
+                    <ImageList sx={{width: '100%'}} cols={small ? 3 : 2} variant='masonry'>
                         {photosList.map((item, index) => (
                                     <Grow
                                         in={true}
@@ -127,7 +127,6 @@ export default function Gallery() {
                                                     alt={item.title}
                                                     loading="lazy"
                                                     placeholder='blur'
-                                                    //blurDataURL={rgbDataURL(175, 175, 175)}
                                                 />
                                         </ImageListItem>
                                     </Grow>

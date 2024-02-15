@@ -111,7 +111,7 @@ export default function Gallery() {
                         </FormControl>
                     </Grid>
                 </Grid>
-                <Grid xs={12} style={{lineHeight:0}} sc={{overflow: 'hidden'}>
+                <Grid xs={12} style={{lineHeight:0}} sc={{overflow: 'hidden'}}>
                     <ImageList sx={{width: '100%'}} cols={small ? 3 : 2} variant='quilted'>
                         {photosList.map((item, index) => (
                                     <Grow

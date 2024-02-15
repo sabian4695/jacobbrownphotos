@@ -125,6 +125,7 @@ export default function Gallery() {
                                                     onClick={() => openImage(index)}
                                                     src={item.img}
                                                     alt={item.title}
+                                                    fill
                                                     loading="lazy"
                                                     placeholder='blur'
                                                     blurDataURL={rgbDataURL(175, 175, 175)}

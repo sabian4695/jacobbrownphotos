@@ -54,6 +54,12 @@ import event13 from '../../public/images/event13.jpeg'
 import event14 from '../../public/images/event14.jpeg'
 import event15 from '../../public/images/event15.jpeg'
 import event16 from '../../public/images/event16.jpeg'
+import event17 from '../../public/images/event17.jpeg'
+import event18 from '../../public/images/event18.jpeg'
+import event19 from '../../public/images/event19.jpeg'
+import event20 from '../../public/images/event20.jpeg'
+import event21 from '../../public/images/event21.jpeg'
+import event22 from '../../public/images/event22.jpeg'
 
 export const itemData = [
     {
@@ -303,6 +309,30 @@ export const itemData = [
     },{
         img: event16,
         title: 'Reception Empty',
+        category: 'event',
+    },{
+        img: event17,
+        title: 'Reception Table',
+        category: 'event',
+    },{
+        img: event18,
+        title: 'Empty Ceremony Detail',
+        category: 'event',
+    },{
+        img: event19,
+        title: 'Ceremony from Back',
+        category: 'event',
+    },{
+        img: event20,
+        title: 'Ceremony from Side looking at Bride',
+        category: 'event',
+    },{
+        img: event21,
+        title: 'Couple eating Doughnuts',
+        category: 'event',
+    },{
+        img: event22,
+        title: 'Ceremony Looking at Bride',
         category: 'event',
     },
 ];

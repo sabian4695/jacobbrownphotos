@@ -29,6 +29,10 @@ import graduate0 from '../../public/images/graduate0.jpeg'
 import graduate1 from '../../public/images/graduate1.jpeg'
 import graduate2 from '../../public/images/graduate2.jpeg'
 import graduate3 from '../../public/images/graduate3.jpeg'
+import graduate4 from '../../public/images/graduate4.jpeg'
+import graduate5 from '../../public/images/graduate5.jpeg'
+import graduate6 from '../../public/images/graduate6.jpeg'
+import graduate7 from '../../public/images/graduate7.jpeg'
 import headshot0 from '../../public/images/headshot0.jpeg'
 import headshot1 from '../../public/images/headshot1.jpeg'
 import portrait0 from '../../public/images/portrait0.jpeg'
@@ -199,6 +203,22 @@ export const itemData = [
     },{
         img: graduate3,
         title: 'Senior Pictures',
+        category: 'graduate',
+    },{
+        img: graduate4,
+        title: 'Senior Portraits',
+        category: 'graduate',
+    },{
+        img: graduate5,
+        title: 'Senior Shoots',
+        category: 'graduate',
+    },{
+        img: graduate6,
+        title: 'Grad Photoss',
+        category: 'graduate',
+    },{
+        img: graduate7,
+        title: 'Senior Snaps',
         category: 'graduate',
     },{
         img: headshot0,

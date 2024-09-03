@@ -111,25 +111,12 @@ export default function About() {
                                             </Typography>
                                         </Grid>
                                         <Grid xs='auto'>
-                                            <IconButton component='a' href='https://www.facebook.com/jacobbrownphotos' target='blank'>
+                                            <IconButton component='a' href='https://www.facebook.com/jacobbrownphoto/' target='blank'>
                                                 <FacebookIcon />
                                             </IconButton>
-                                            <IconButton component='a' href='https://www.instagram.com/jacobbrown_photos/' target='blank'>
+                                            <IconButton component='a' href='https://www.instagram.com/_jacobbrownphotos/' target='blank'>
                                                 <InstagramIcon />
                                             </IconButton>
-                                            <IconButton component='a' href='https://www.zola.com/wedding-vendors/wedding-photographers/jacob-brown-photos?utm_source=vendor&utm_medium=various&utm_content=badge' target='blank'>
-                                                <Image
-                                                    style={{ cursor: 'pointer', objectFit: 'scale-down', width: '50px', height: '50px' }}
-                                                    src='https://d1tntvpcrzvon2.cloudfront.net/static-assets/images/badges/featured_on_zola_v3.png'
-                                                    alt='Featured on Zola'
-                                                    loading="lazy"
-                                                    height="50"
-                                                    width="50"
-                                                    placeholder='blur'
-                                                    blurDataURL={rgbDataURL(175, 175, 175)}
-                                                />
-                                            </IconButton>
-
                                         </Grid>
                                     </Grid>
                                     <Typography variant='body1' color='text.secondary'>

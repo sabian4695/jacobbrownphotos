@@ -35,6 +35,12 @@ import graduate6 from '../../public/images/graduate6.jpeg'
 import graduate7 from '../../public/images/graduate7.jpeg'
 import headshot0 from '../../public/images/headshot0.jpeg'
 import headshot1 from '../../public/images/headshot1.jpeg'
+import headshot2 from '../../public/images/headshot2.jpeg'
+import headshot3 from '../../public/images/headshot3.jpeg'
+import headshot4 from '../../public/images/headshot4.jpeg'
+import headshot5 from '../../public/images/headshot5.jpeg'
+import headshot6 from '../../public/images/headshot6.jpeg'
+import headshot7 from '../../public/images/headshot7.jpeg'
 import portrait0 from '../../public/images/portrait0.jpeg'
 import food0 from '../../public/images/food0.jpeg'
 import food1 from '../../public/images/food1.jpeg'
@@ -233,6 +239,30 @@ export const itemData = [
     },{
         img: headshot1,
         title: 'Headshot Portraits',
+        category: 'headshot',
+    },{
+        img: headshot2,
+        title: 'Headshot on Brick Road',
+        category: 'headshot',
+    },{
+        img: headshot3,
+        title: 'Headshot with Brick Wall Background',
+        category: 'headshot',
+    },{
+        img: headshot4,
+        title: 'Headshot Sitting on a Bench with Brick Background',
+        category: 'headshot',
+    },{
+        img: headshot5,
+        title: 'Formal Headshot Portrait Close-up on a Bench with Brick Background',
+        category: 'headshot',
+    },{
+        img: headshot6,
+        title: 'Pro Headshot Leaning on Brick Wall',
+        category: 'headshot',
+    },{
+        img: headshot7,
+        title: 'Professional Headshot Standing on a Brick Road',
         category: 'headshot',
     },{
         img: portrait0,

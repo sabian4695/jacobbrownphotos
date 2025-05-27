@@ -15,6 +15,8 @@ import family12 from '../../public/images/family12.jpeg'
 import family13 from '../../public/images/family13.jpeg'
 import family14 from '../../public/images/family14.jpeg'
 import baby0 from '../../public/images/baby0.jpeg'
+import baby1 from '../../public/images/baby1.jpeg'
+import baby2 from '../../public/images/baby2.jpeg'
 import general0 from '../../public/images/general0.jpeg'
 import general1 from '../../public/images/general1.jpeg'
 import general2 from '../../public/images/general2.jpeg'
@@ -29,10 +31,6 @@ import graduate0 from '../../public/images/graduate0.jpeg'
 import graduate1 from '../../public/images/graduate1.jpeg'
 import graduate2 from '../../public/images/graduate2.jpeg'
 import graduate3 from '../../public/images/graduate3.jpeg'
-import graduate4 from '../../public/images/graduate4.jpeg'
-import graduate5 from '../../public/images/graduate5.jpeg'
-import graduate6 from '../../public/images/graduate6.jpeg'
-import graduate7 from '../../public/images/graduate7.jpeg'
 import headshot0 from '../../public/images/headshot0.jpeg'
 import headshot1 from '../../public/images/headshot1.jpeg'
 import headshot2 from '../../public/images/headshot2.jpeg'
@@ -42,6 +40,9 @@ import headshot5 from '../../public/images/headshot5.jpeg'
 import headshot6 from '../../public/images/headshot6.jpeg'
 import headshot7 from '../../public/images/headshot7.jpeg'
 import portrait0 from '../../public/images/portrait0.jpeg'
+import portrait1 from '../../public/images/portrait1.jpeg'
+import portrait2 from '../../public/images/portrait2.jpeg'
+import portrait3 from '../../public/images/portrait3.jpeg'
 import food0 from '../../public/images/food0.jpeg'
 import food1 from '../../public/images/food1.jpeg'
 import event1 from '../../public/images/event1.jpeg'
@@ -113,6 +114,10 @@ export const itemData = [
         img: family4,
         title: 'Baby Photos',
         category: 'family',
+    },{
+        img: family4,
+        title: 'Baby Pic',
+        category: 'baby',
     },
     {
         img: family5,
@@ -151,88 +156,91 @@ export const itemData = [
     },
     {
         img: baby0,
-        title: 'Baby0',
+        title: 'Baby Picture',
+        category: 'family',
+    },{
+        img: baby0,
+        title: 'Baby on Fall Leaves',
         category: 'baby',
+    },{
+        img: baby1,
+        title: 'Baby held by Mom',
+        category: 'baby',
+    },{
+        img: baby2,
+        title: 'Baby on Moms Shoulder',
+        category: 'baby',
+    },{
+        img: baby1,
+        title: 'Baby cradled by Mama',
+        category: 'family',
+    },{
+        img: baby2,
+        title: 'Baby on Mamas Shoulder',
+        category: 'family',
     },
     {
         img: general0,
         title: 'General0',
-        category: 'general',
+        category: 'location',
     },
     {
         img: general1,
         title: 'General1',
-        category: 'general',
+        category: 'location',
     },
     {
         img: general2,
         title: 'General2',
-        category: 'general',
+        category: 'location',
     },
     {
         img: general3,
         title: 'General3',
-        category: 'general',
+        category: 'location',
     },
     {
         img: general4,
         title: 'General4',
-        category: 'general',
+        category: 'location',
     },
     {
         img: general5,
         title: 'General5',
-        category: 'general',
+        category: 'location',
     },
     {
         img: general6,
         title: 'Nature Photography',
-        category: 'general',
+        category: 'location',
     },{
         img: general7,
         title: 'Event Space',
-        category: 'general',
+        category: 'location',
     },{
         img: general8,
         title: 'Cake',
-        category: 'general',
-    },
-    {
+        category: 'event',
+    },{
         img: pet0,
         title: 'Pet Photos',
         category: 'pet',
-    }, {
+    },{
         img: graduate0,
-        title: 'Graduate Photos',
-        category: 'graduate',
+        title: 'Graduate Photo with Diploma',
+        category: 'senior',
     },{
         img: graduate1,
-        title: 'Graduate Pictures',
-        category: 'graduate',
+        title: 'Graduate Picture with Sash',
+        category: 'senior',
     },{
         img: graduate2,
-        title: 'Senior Photos',
-        category: 'graduate',
+        title: 'Graduate Photo of Tassle',
+        category: 'senior',
     },{
         img: graduate3,
-        title: 'Senior Pictures',
-        category: 'graduate',
-    },{
-        img: graduate4,
-        title: 'Senior Portraits',
-        category: 'graduate',
-    },{
-        img: graduate5,
-        title: 'Senior Shoots',
-        category: 'graduate',
-    },{
-        img: graduate6,
-        title: 'Grad Photoss',
-        category: 'graduate',
-    },{
-        img: graduate7,
-        title: 'Senior Snaps',
-        category: 'graduate',
+        title: 'Graduate Picture with Diploma',
+        category: 'senior',
     },{
         img: headshot0,
         title: 'Professional Headshots',
@@ -267,8 +275,20 @@ export const itemData = [
         category: 'headshot',
     },{
         img: portrait0,
-        title: 'General Portraits',
-        category: 'portrait',
+        title: 'Senior Picture with Electric Guitar',
+        category: 'senior',
+    },{
+        img: portrait1,
+        title: 'Senior Picture with Tennis Ball',
+        category: 'senior',
+    },{
+        img: portrait2,
+        title: 'Senior Year Photo Against Tree',
+        category: 'senior',
+    },{
+        img: portrait3,
+        title: 'Senior Pic on Bench',
+        category: 'senior',
     },{
         img: food0,
         title: 'Product Photography',

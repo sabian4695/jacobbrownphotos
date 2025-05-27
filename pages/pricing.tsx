@@ -87,9 +87,9 @@ export default function About() {
                 <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
                 <title>PRICING | Jacob Brown Photos - Lancaster, Ohio Photographer / Videographer</title>
             </Head>
-            <Grid container spacing={2} sx={{ m: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Grid container spacing={2} sx={{ m: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Grid xs={12} md={6}>
-                    <Stack spacing={5}>
+                    <Stack spacing={2}>
                         <Grow
                             in={true}
                             {...({ timeout: 400 })}
@@ -171,7 +171,7 @@ export default function About() {
                                                     clickable
                                                     variant='outlined'
                                                     color='secondary'
-                                                    label="baby photos"
+                                                    label="newborn photos"
                                                     icon={<ChildFriendlyIcon />} />
                                             </Grid>
                                             <Grid xs='auto'>
@@ -185,7 +185,7 @@ export default function About() {
                                             </Grid>
                                             <Grid xs='auto'>
                                                 <Chip
-                                                    onClick={() => chipClick('portrait')}
+                                                    onClick={() => chipClick('senior')}
                                                     clickable
                                                     variant='outlined'
                                                     color='secondary'
@@ -297,7 +297,7 @@ export default function About() {
                                             </Grid>
                                             <Grid xs='auto'>
                                                 <Chip
-                                                    onClick={() => chipClick('general')}
+                                                    onClick={() => chipClick('location')}
                                                     clickable
                                                     variant='outlined'
                                                     color='secondary'

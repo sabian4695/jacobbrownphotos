@@ -156,20 +156,20 @@ export default function App({ Component, pageProps }) {
               Home
             </ListItemText>
           </MenuItem>
-          <MenuItem onClick={handleCloseMenu} component={Link} href="pricing">
-            <ListItemIcon>
-              <SellIcon />
-            </ListItemIcon>
-            <ListItemText>
-              Pricing
-            </ListItemText>
-          </MenuItem>
           <MenuItem onClick={handleCloseMenu} component={Link} href="gallery">
             <ListItemIcon>
               <CameraRollIcon />
             </ListItemIcon>
             <ListItemText>
               Gallery
+            </ListItemText>
+          </MenuItem>
+          <MenuItem onClick={handleCloseMenu} component={Link} href="pricing">
+            <ListItemIcon>
+              <SellIcon />
+            </ListItemIcon>
+            <ListItemText>
+              Pricing
             </ListItemText>
           </MenuItem>
           <MenuItem onClick={handleCloseMenu} component={Link} href="about">

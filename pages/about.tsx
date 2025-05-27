@@ -75,8 +75,8 @@ export default function About() {
                 <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
                 <title>ABOUT | Jacob Brown Photos - Lancaster, Ohio Photographer / Videographer</title>
             </Head>
-            <Grid container sx={{ m: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Grid id='aboutMe' xs={12} md={5} sx={{ mb: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Grid container spacing={2} sx={{ m: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Grid id='aboutMe' xs={12} md={5} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Grow
                         in={true}
                         {...({ timeout: 400 })}
@@ -91,7 +91,7 @@ export default function About() {
                         </Card>
                     </Grow>
                 </Grid>
-                <Grid container xs={12} md={6} sx={{ m: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }} spacing={2}>
+                <Grid xs={12} md={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} spacing={2}>
                     <Stack spacing={2}>
                         <Grow
                             id='aboutMeText'
@@ -209,7 +209,7 @@ export default function About() {
                                                 target='blank'
                                                 href='https://maps.app.goo.gl/1jPuNSwWgxV3n3yr6'
                                                 color='secondary'
-                                                label='Carrol' />
+                                                label='Carroll' />
                                         </Grid>
                                         <Grid>
                                             <Chip

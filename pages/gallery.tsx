@@ -80,41 +80,28 @@ export default function Gallery() {
           <title>GALLERY | Jacob Brown Photos - Lancaster, Ohio Photographer / Videographer</title>
         </Head>
             <Grid container>
-                <Grid container xs={12} sx={{display:'flex', justifyContent:'center'}}>
-                    <Grid xs='auto' sx={{display:'flex', justifyContent:'center'}}>
-                        <Button 
-                            variant="contained"
-                            startIcon={<CameraRollIcon />}
-                            target="blank"
-                            href="https://drive.google.com/drive/folders/1iWHJmfvosjarLbD60_S2w9NkcqRyTff8?usp=sharing">
-                                See Full Galleries
-                        </Button>
-                    </Grid>
-                    <Grid xs='auto' sx={{display:'flex'}}>
-                        <FormControl variant="standard" sx={{ my: 1, mx:4, minWidth: 250 }}>
-                            <InputLabel>Filter Pictures</InputLabel>
-                            <Select
-                                value={filtVal}
-                                onChange={(event: SelectChangeEvent) => setFiltValue(event.target.value)}
-                                label="Filter"
-                            >
-                                <MenuItem value=''>
-                                    <em>See All</em>
-                                </MenuItem>
-                                <MenuItem value={'engagement'}>Engagement</MenuItem>
-                                <MenuItem value={'event'}>Events/Weddings</MenuItem>
-                                <MenuItem value={'family'}>Family</MenuItem>
-                                <MenuItem value={'portrait'}>Portrait</MenuItem>
-                                <MenuItem value={'baby'}>Baby</MenuItem>
-                                <MenuItem value={'pet'}>Pet</MenuItem>
-                                <MenuItem value={'graduate'}>Graduate</MenuItem>
-                                <MenuItem value={'product'}>Product</MenuItem>
-                                <MenuItem value={'headshot'}>Headshots</MenuItem>
-                                <MenuItem value={'general'}>General</MenuItem>
-                            </Select>
-                            
-                        </FormControl>
-                    </Grid>
+                <Grid xs={12} sx={{display:'flex', justifyContent:'center'}}>
+                    <FormControl variant="filled" sx={{ my: 1, mx:4, minWidth: 250 }}>
+                        <InputLabel>Narrow down your search</InputLabel>
+                        <Select
+                            value={filtVal}
+                            onChange={(event: SelectChangeEvent) => setFiltValue(event.target.value)}
+                            label="Select a Category"
+                        >
+                            <MenuItem value=''>
+                                <em>See All</em>
+                            </MenuItem>
+                            <MenuItem value={'engagement'}>Engagement Pictures</MenuItem>
+                            <MenuItem value={'event'}>Wedding / Event Photography</MenuItem>
+                            <MenuItem value={'family'}>Family Portraits</MenuItem>
+                            <MenuItem value={'pet'}> - Pets</MenuItem>
+                            <MenuItem value={'baby'}> - Newborn</MenuItem>
+                            <MenuItem value={'senior'}>Senior Photos</MenuItem>
+                            <MenuItem value={'product'}>Product Photos</MenuItem>
+                            <MenuItem value={'headshot'}>Professional Headshots</MenuItem>
+                            <MenuItem value={'location'}>Location Shoots</MenuItem>
+                        </Select>
+                    </FormControl>
                 </Grid>
                 <Grid xs={12} style={{lineHeight:0}} sx={{overflow: 'hidden'}}>
                     <ImageList sx={{width: '100%'}} cols={small ? 3 : 2} variant='masonry'>

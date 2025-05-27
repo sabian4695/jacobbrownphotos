@@ -3,32 +3,32 @@ import Grow from '@mui/material/Grow';
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
 import Chip from "@mui/material/Chip";
-import FestivalIcon from "@mui/icons-material/Festival";
 import WorkIcon from "@mui/icons-material/Work";
 import CategoryIcon from "@mui/icons-material/Category";
 import BlurOnIcon from "@mui/icons-material/BlurOn";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import {useTheme} from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import {useRecoilState, useSetRecoilState} from "recoil";
-import {currentPhoto, filterVal, lightboxOpen, photos} from "../recoil/atoms";
-import {itemData} from "./allPhotos";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { currentPhoto, filterVal, lightboxOpen, photos } from "../recoil/atoms";
+import { itemData } from "./allPhotos";
 import Button from "@mui/material/Button";
 import Link from 'next/link'
 import InfoIcon from "@mui/icons-material/Info";
 import CameraRollIcon from "@mui/icons-material/CameraRoll";
 import Image from 'next/image'
 import SellIcon from '@mui/icons-material/Sell';
+import CakeIcon from '@mui/icons-material/Cake';
 
 const keyStr =
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
 
 const triplet = (e1: number, e2: number, e3: number) =>
-  keyStr.charAt(e1 >> 2) +
-  keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
-  keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
-  keyStr.charAt(e3 & 63)
+    keyStr.charAt(e1 >> 2) +
+    keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
+    keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
+    keyStr.charAt(e3 & 63)
 
 const headerPhotos = [
     {
@@ -85,18 +85,18 @@ export default function Gallery() {
         document.title = 'Jacob Brown Photos - Lancaster, Ohio Photographer / Videographer';
     }, []);
     React.useEffect(() => {
-        if(filtVal !== '') {
+        if (filtVal !== '') {
             let shuffled = itemData
-                .map(value => ({value, sort: Math.random()}))
+                .map(value => ({ value, sort: Math.random() }))
                 .sort((a, b) => a.sort - b.sort)
-                .map(({value}) => value)
+                .map(({ value }) => value)
                 .filter(x => x.category === filtVal)
             setPhotosList(shuffled)
         } else {
             let shuffled = itemData
-                .map(value => ({value, sort: Math.random()}))
+                .map(value => ({ value, sort: Math.random() }))
                 .sort((a, b) => a.sort - b.sort)
-                .map(({value}) => value)
+                .map(({ value }) => value)
             setPhotosList(shuffled)
         }
         setCurPhoto(0)
@@ -104,14 +104,14 @@ export default function Gallery() {
     return (
         <>
             <Grid container spacing={2} sx={{
-                m:1,
-                textAlign:'center',
-                display:'flex',
-                justifyContent:'center',
-                alignItems:'center',
+                m: 1,
+                textAlign: 'center',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
                 color: 'success'
             }}>
-                <Grid xs={12} sx={{display:'flex', justifyContent:'center'}}>
+                <Grid xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
                     <img
                         height='100'
                         src='/images/logo.png'
@@ -122,7 +122,7 @@ export default function Gallery() {
                 </Grid>
                 <Grid xs={12}>
                     <Typography
-                        sx={{ fontWeight: '100', letterSpacing: 10}}
+                        sx={{ fontWeight: '100', letterSpacing: 10 }}
                         variant={small ? 'h3' : 'h5'}
                         color='text.secondary'
                     >
@@ -131,12 +131,12 @@ export default function Gallery() {
                 </Grid>
             </Grid>
             <Grid container sx={{
-                textAlign:'center',
-                display:'flex',
-                justifyContent:'center',
+                textAlign: 'center',
+                display: 'flex',
+                justifyContent: 'center',
             }}>
-                <Grid xs={12} style={{lineHeight:0}}>
-                    <ImageList sx={{ width: '100%'}} cols={small ? 2 : 1} variant="masonry">
+                <Grid xs={12} style={{ lineHeight: 0 }}>
+                    <ImageList sx={{ width: '100%' }} cols={small ? 2 : 1} variant="masonry">
                         {/*//@ts-ignore*/}
                         {headerPhotos.map((item, index) => (
                             <Grow
@@ -146,7 +146,7 @@ export default function Gallery() {
                             >
                                 <ImageListItem key={item.title}>
                                     <Image
-                                        style={{objectFit:'scale-down', width:'100%', height:'auto'}}
+                                        style={{ objectFit: 'scale-down', width: '100%', height: 'auto' }}
                                         src={item.img}
                                         alt={item.title}
                                         loading="lazy"
@@ -159,20 +159,20 @@ export default function Gallery() {
                 </Grid>
             </Grid>
             <Grid container spacing={2} sx={{
-                textAlign:'center',
-                display:'flex',
-                justifyContent:'center',
+                textAlign: 'center',
+                display: 'flex',
+                justifyContent: 'center',
             }}>
                 <Grid xs={12}>
                     <Typography
-                        sx={{ fontWeight: '200'}}
+                        sx={{ fontWeight: '200' }}
                         variant={small ? 'h3' : 'h4'}
                         color='text.secondary'
                     >
                         Lancaster, Ohio Photographer / Videographer
                     </Typography>
                 </Grid>
-                <Grid container direction='row' spacing={1} sx={{display:'flex', justifyContent:'center'}}>
+                <Grid container direction='row' spacing={1} sx={{ display: 'flex', justifyContent: 'center' }}>
                     <Grid xs='auto'>
                         <Chip
                             onClick={() => chipClick('headshot')}
@@ -180,14 +180,15 @@ export default function Gallery() {
                             variant='filled'
                             color='secondary'
                             label="professional headshots"
-                            icon={<WorkIcon />}/>
+                            icon={<WorkIcon />} />
                     </Grid>
                     <Grid xs='auto'>
                         <Chip
+                            onClick={() => chipClick('event')}
                             variant='filled'
                             color='secondary'
-                            label="events"
-                            icon={<FestivalIcon />}/>
+                            label="wedding photos / video"
+                            icon={<CakeIcon />} />
                     </Grid>
                     <Grid xs='auto'>
                         <Chip
@@ -196,22 +197,22 @@ export default function Gallery() {
                             variant='filled'
                             color='secondary'
                             label="product photos"
-                            icon={<CategoryIcon />}/>
+                            icon={<CategoryIcon />} />
                     </Grid>
                     <Grid xs='auto'>
                         <Chip
-                            onClick={() => chipClick('general')}
+                            onClick={() => chipClick('location')}
                             clickable
                             variant='filled'
                             color='secondary'
                             label="Other - let's talk!"
-                            icon={<BlurOnIcon />}/>
+                            icon={<BlurOnIcon />} />
                     </Grid>
                 </Grid>
-                <Grid xs={12} spacing={3} sx={small ? {mx:20} : {mx:1}}>
+                <Grid xs={12} spacing={3} sx={small ? { mx: 20 } : { mx: 1 }}>
                     <Grid>
                         <Typography
-                            sx={{ fontWeight: '300'}}
+                            sx={{ fontWeight: '300' }}
                             variant='body1'
                             color='text.primary'
                         >
@@ -220,7 +221,7 @@ export default function Gallery() {
                     </Grid>
                     <Grid>
                         <Typography
-                            sx={{ fontWeight: '100', fontStyle: 'italic'}}
+                            sx={{ fontWeight: '100', fontStyle: 'italic' }}
                             variant='body2'
                             color='text.secondary'
                         >
@@ -230,13 +231,13 @@ export default function Gallery() {
                 </Grid>
             </Grid>
             <Grid container spacing={2} sx={{
-                textAlign:'center',
-                display:'flex',
-                justifyContent:'center',
-                mb:1
+                textAlign: 'center',
+                display: 'flex',
+                justifyContent: 'center',
+                mb: 1
             }}>
-                <Grid xs={12} style={{lineHeight:0}}>
-                    <ImageList sx={{ width: '100%'}} cols={small ? 2 : 1} variant="masonry">
+                <Grid xs={12} style={{ lineHeight: 0 }}>
+                    <ImageList sx={{ width: '100%' }} cols={small ? 2 : 1} variant="masonry">
                         {/*//@ts-ignore*/}
                         {middlePhotos.map((item, index) => (
                             <Grow
@@ -246,7 +247,7 @@ export default function Gallery() {
                             >
                                 <ImageListItem key={item.title}>
                                     <Image
-                                        style={{objectFit:'scale-down', width:'100%', height:'auto'}}
+                                        style={{ objectFit: 'scale-down', width: '100%', height: 'auto' }}
                                         src={item.img}
                                         alt={item.title}
                                         loading="lazy"
@@ -257,9 +258,9 @@ export default function Gallery() {
                         ))}
                     </ImageList>
                 </Grid>
-                <Grid xs={12} sx={small ? {mx:17} : {mx:1}}>
+                <Grid xs={12} sx={small ? { mx: 17 } : { mx: 1 }}>
                     <Typography
-                        sx={{ fontWeight: '200'}}
+                        sx={{ fontWeight: '200' }}
                         variant='body1'
                     >
                         Jacob Brown Photos is owned and operated by Jacob Brown, working mainly out of the
@@ -267,17 +268,17 @@ export default function Gallery() {
                     </Typography>
                 </Grid>
                 <Grid xs='auto'>
-                    <Button sx={{mx:1}} variant='contained' component={Link} href="about" startIcon={<InfoIcon />}>
+                    <Button sx={{ mx: 1 }} variant='contained' component={Link} href="about" startIcon={<InfoIcon />}>
                         About
                     </Button>
                 </Grid>
                 <Grid xs='auto'>
-                    <Button sx={{mx:1}} variant='contained' component={Link} href="pricing" startIcon={<SellIcon />}>
+                    <Button sx={{ mx: 1 }} variant='contained' component={Link} href="pricing" startIcon={<SellIcon />}>
                         Pricing
                     </Button>
                 </Grid>
                 <Grid xs='auto'>
-                    <Button sx={{mx:1}} variant='contained' component={Link} href="gallery" startIcon={<CameraRollIcon />}>
+                    <Button sx={{ mx: 1 }} variant='contained' component={Link} href="gallery" startIcon={<CameraRollIcon />}>
                         See Gallery
                     </Button>
                 </Grid>

@@ -30,6 +30,7 @@ import {eventComing} from "./index";
 import HomeIcon from '@mui/icons-material/Home';
 import {RecoilRoot} from "recoil";
 import Image from 'next/image'
+import SellIcon from '@mui/icons-material/Sell';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
@@ -102,6 +103,9 @@ export default function App({ Component, pageProps }) {
                     <Button sx={{mx:1}} component={Link} href="gallery" startIcon={<CameraRollIcon />}>
                       Gallery
                     </Button>
+                    <Button sx={{mx:1}} component={Link} href="pricing" startIcon={<SellIcon />}>
+                      Pricing
+                    </Button>
                     <Button sx={{mx:1}} component={Link} href="about" startIcon={<InfoIcon />}>
                       About
                     </Button>
@@ -130,7 +134,7 @@ export default function App({ Component, pageProps }) {
           </Toolbar>
         </AppBar>
           <Box component="main"
-            sx={{p: 1, width:'100%'}}>
+            sx={{p: 1, width:'100%', backgroundColor: '#e6f2ee'}}>
             <Toolbar/>
             <Component {...pageProps} />
           </Box>
@@ -150,6 +154,14 @@ export default function App({ Component, pageProps }) {
             </ListItemIcon>
             <ListItemText>
               Home
+            </ListItemText>
+          </MenuItem>
+          <MenuItem onClick={handleCloseMenu} component={Link} href="pricing">
+            <ListItemIcon>
+              <SellIcon />
+            </ListItemIcon>
+            <ListItemText>
+              Pricing
             </ListItemText>
           </MenuItem>
           <MenuItem onClick={handleCloseMenu} component={Link} href="gallery">

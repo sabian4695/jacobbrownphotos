@@ -1,10 +1,8 @@
 import React from 'react';
 import Grow from '@mui/material/Grow';
-import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
 import Chip from "@mui/material/Chip";
-import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
 import FestivalIcon from "@mui/icons-material/Festival";
 import WorkIcon from "@mui/icons-material/Work";
 import CategoryIcon from "@mui/icons-material/Category";
@@ -21,6 +19,7 @@ import Link from 'next/link'
 import InfoIcon from "@mui/icons-material/Info";
 import CameraRollIcon from "@mui/icons-material/CameraRoll";
 import Image from 'next/image'
+import SellIcon from '@mui/icons-material/Sell';
 
 const keyStr =
   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
@@ -30,11 +29,6 @@ const triplet = (e1: number, e2: number, e3: number) =>
   keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
   keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
   keyStr.charAt(e3 & 63)
-
-const rgbDataURL = (r: number, g: number, b: number) =>
-  `data:image/gif;base64,R0lGODlhAQABAPAA${
-    triplet(0, r, g) + triplet(b, 255, 255)
-  }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
 
 const headerPhotos = [
     {
@@ -46,9 +40,9 @@ const headerPhotos = [
         title: 'Wedding Couple',
         category: 'event',
     }, {
-        img: itemData.find(x => x.title === 'Family12')?.img,
-        title: 'Family Photos',
-        category: 'family',
+        img: itemData.find(x => x.title === 'Couple eating Doughnuts')?.img,
+        title: 'Bride and Groom eating Donuts at Wedding',
+        category: 'event',
     }, {
         img: itemData.find(x => x.title === 'Father Walking Daughter Down the Isle')?.img,
         title: 'Father Daughter',
@@ -88,7 +82,7 @@ export default function Gallery() {
         setOpenModal(true)
     }
     React.useEffect(() => {
-        document.title = 'Jacob Brown Photos - Canal Winchester, Ohio Photographer / Videographer';
+        document.title = 'Jacob Brown Photos - Lancaster, Ohio Photographer / Videographer';
     }, []);
     React.useEffect(() => {
         if(filtVal !== '') {
@@ -115,6 +109,7 @@ export default function Gallery() {
                 display:'flex',
                 justifyContent:'center',
                 alignItems:'center',
+                color: 'success'
             }}>
                 <Grid xs={12} sx={{display:'flex', justifyContent:'center'}}>
                     <img
@@ -174,7 +169,7 @@ export default function Gallery() {
                         variant={small ? 'h3' : 'h4'}
                         color='text.secondary'
                     >
-                        Canal Winchester, Ohio Photographer / Videographer
+                        Lancaster, Ohio Photographer / Videographer
                     </Typography>
                 </Grid>
                 <Grid container direction='row' spacing={1} sx={{display:'flex', justifyContent:'center'}}>
@@ -220,7 +215,7 @@ export default function Gallery() {
                             variant='body1'
                             color='text.primary'
                         >
-                            Jacob Brown Photos is a Canal Winchester, Ohio Photographer and Videographer specializing in professional headshots and wedding photography and videography.
+                            Jacob Brown Photos is a Lancaster, Ohio Photographer and Videographer specializing in professional headshots and wedding photography and videography.
                         </Typography>
                     </Grid>
                     <Grid>
@@ -268,12 +263,17 @@ export default function Gallery() {
                         variant='body1'
                     >
                         Jacob Brown Photos is owned and operated by Jacob Brown, working mainly out of the
-                        historic downtown Canal Winchester, Pickerington, Carroll, and surrounding areas.
+                        Lancaster, Canal Winchester, Pickerington, Carroll, and surrounding areas.
                     </Typography>
                 </Grid>
                 <Grid xs='auto'>
                     <Button sx={{mx:1}} variant='contained' component={Link} href="about" startIcon={<InfoIcon />}>
-                        About / Pricing
+                        About
+                    </Button>
+                </Grid>
+                <Grid xs='auto'>
+                    <Button sx={{mx:1}} variant='contained' component={Link} href="pricing" startIcon={<SellIcon />}>
+                        Pricing
                     </Button>
                 </Grid>
                 <Grid xs='auto'>
@@ -282,14 +282,12 @@ export default function Gallery() {
                     </Button>
                 </Grid>
             </Grid>
-            <Grid xs={12}>
+            <Grid xs={12} sx={{ mt: 1, textAlign: 'center' }}>
                 <Grow
                     in={true}
                     {...({ timeout: 2000 })}
                 >
-                    <Paper sx={{p:'1', textAlign:'center', height:'100%'}} elevation={0}>
-                        <Typography variant='caption' color='text.secondary'>website made by &copy; 2023 Jacob Brown Photos</Typography>
-                    </Paper>
+                    <Typography variant='caption' color='text.secondary'>website made by &copy; Jacob Brown Photos</Typography>
                 </Grow>
             </Grid>
         </>

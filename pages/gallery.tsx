@@ -17,6 +17,7 @@ import {itemData} from "../src/components/allPhotos";
 import Head from 'next/head'
 import Image from 'next/image'
 import Button from '@mui/material/Button';
+import CameraRollIcon from '@mui/icons-material/CameraRoll';
 
 const keyStr =
   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
@@ -71,18 +72,22 @@ export default function Gallery() {
           <meta name="theme-color" content="#000000" />
           <meta
             name="description"
-            content="Jacob Brown Photos - Canal Winchester, Ohio Professional Photographer / Videographer. Book me for professional headshots, family photos, senior photos, product photos, pet photos, baby photos, and much more."
+            content="Jacob Brown Photos - Lancaster, Ohio Professional Photographer / Videographer. Book me for professional headshots, family photos, senior photos, product photos, pet photos, baby photos, and much more."
           />
           <meta name="robots" content="index,follow" />
           <link rel="apple-touch-icon" href="%PUBLIC_URL%/android-chrome-192x192.png" />
           <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-          <title>GALLERY | Jacob Brown Photos - Canal Winchester, Ohio Photographer / Videographer</title>
+          <title>GALLERY | Jacob Brown Photos - Lancaster, Ohio Photographer / Videographer</title>
         </Head>
             <Grid container>
                 <Grid container xs={12} sx={{display:'flex', justifyContent:'center'}}>
                     <Grid xs='auto' sx={{display:'flex', justifyContent:'center'}}>
-                        <Button variant="outlined" target="blank" href="https://drive.google.com/drive/folders/1iWHJmfvosjarLbD60_S2w9NkcqRyTff8?usp=sharing">
-                            See Full Galleries
+                        <Button 
+                            variant="contained"
+                            startIcon={<CameraRollIcon />}
+                            target="blank"
+                            href="https://drive.google.com/drive/folders/1iWHJmfvosjarLbD60_S2w9NkcqRyTff8?usp=sharing">
+                                See Full Galleries
                         </Button>
                     </Grid>
                     <Grid xs='auto' sx={{display:'flex'}}>
@@ -134,14 +139,12 @@ export default function Gallery() {
                     </ImageList>
                 </Grid>
             </Grid>
-            <Grid xs={12}>
+            <Grid xs={12} sx={{ mt: 1, textAlign: 'center' }}>
                 <Grow
                     in={true}
                     {...({ timeout: 2000 })}
                 >
-                    <Paper sx={{p:'1', textAlign:'center', height:'100%'}} elevation={0}>
-                        <Typography variant='caption' color='text.secondary'>website made by &copy; Jacob Brown Photos</Typography>
-                    </Paper>
+                    <Typography variant='caption' color='text.secondary'>website made by &copy; Jacob Brown Photos</Typography>
                 </Grow>
             </Grid>
         </>

@@ -66,6 +66,7 @@ import event19 from '../../public/images/event19.jpeg'
 import event20 from '../../public/images/event20.jpeg'
 import event21 from '../../public/images/event21.jpeg'
 import event22 from '../../public/images/event22.jpeg'
+import pricingPage from '../../public/images/pricingPage.jpeg'
 
 export const itemData = [
     {
@@ -364,5 +365,9 @@ export const itemData = [
         img: event22,
         title: 'Ceremony Looking at Bride',
         category: 'event',
-    },
+    },{
+        img: pricingPage,
+        title: 'Couple gazing into each others eyes at ceremony',
+        category: 'Page Assets',
+    }
 ];

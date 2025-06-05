@@ -268,17 +268,17 @@ export default function Gallery() {
                     </Typography>
                 </Grid>
                 <Grid xs='auto'>
-                    <Button sx={{ mx: 1 }} variant='contained' component={Link} href="about" startIcon={<InfoIcon />}>
+                    <Button sx={{ mx: 1 }} variant='text' component={Link} href="about" startIcon={<InfoIcon />}>
                         About
                     </Button>
                 </Grid>
                 <Grid xs='auto'>
-                    <Button sx={{ mx: 1 }} variant='contained' component={Link} href="pricing" startIcon={<SellIcon />}>
+                    <Button sx={{ mx: 1 }} variant='text' component={Link} href="pricing" startIcon={<SellIcon />}>
                         Pricing
                     </Button>
                 </Grid>
                 <Grid xs='auto'>
-                    <Button sx={{ mx: 1 }} variant='contained' component={Link} href="gallery" startIcon={<CameraRollIcon />}>
+                    <Button sx={{ mx: 1 }} variant='text' component={Link} href="gallery" startIcon={<CameraRollIcon />}>
                         See Gallery
                     </Button>
                 </Grid>

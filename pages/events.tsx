@@ -4,7 +4,6 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Grow from '@mui/material/Grow';
 import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import {CardContent} from "@mui/material";

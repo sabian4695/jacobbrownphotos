@@ -186,6 +186,7 @@ export default function About() {
                                     <Grid container spacing={1}>
                                         <Grid>
                                             <Chip
+                                                variant='outlined'
                                                 clickable
                                                 component='a'
                                                 target='blank'
@@ -195,6 +196,7 @@ export default function About() {
                                         </Grid>
                                         <Grid>
                                             <Chip
+                                                variant='outlined'
                                                 clickable
                                                 component='a'
                                                 href='https://goo.gl/maps/TEt1tz22ZZFeGAnS8'
@@ -204,6 +206,7 @@ export default function About() {
                                         </Grid>
                                         <Grid>
                                             <Chip
+                                                variant='outlined'
                                                 clickable
                                                 component='a'
                                                 target='blank'
@@ -213,6 +216,7 @@ export default function About() {
                                         </Grid>
                                         <Grid>
                                             <Chip
+                                                variant='outlined'
                                                 clickable
                                                 component='a'
                                                 target='blank'
@@ -222,6 +226,7 @@ export default function About() {
                                         </Grid>
                                         <Grid>
                                             <Chip
+                                                variant='outlined'
                                                 clickable
                                                 component='a'
                                                 target='blank'
@@ -231,6 +236,7 @@ export default function About() {
                                         </Grid>
                                         <Grid>
                                             <Chip
+                                                variant='outlined'
                                                 clickable
                                                 component='a'
                                                 target='blank'

@@ -51,7 +51,14 @@ const theme = createTheme({
     },
     secondary: {
       main: secondaryMain
-    }
+    },
+    background: {
+      default: '#f5faf8',
+      paper: '#fcfdfd',
+    },
+    text: {
+      primary: '#679bac'
+    },
   }
 })
 
@@ -78,8 +85,8 @@ export default function App({ Component, pageProps }) {
     <RecoilRoot>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <AppBar component="nav" sx={{backgroundColor:'background.paper', color:'primary.main'}}>
-          <Toolbar>
+        <AppBar component="nav" elevation={5} variant='outlined' sx={{backgroundColor:'background.paper', color:'primary.main'}}>
+          <Toolbar variant='dense'>
             <Image
                 height='30'
                 width='30'
@@ -97,20 +104,20 @@ export default function App({ Component, pageProps }) {
             <Box sx={bigger ? {display:'flex'} : null}>
               {bigger ?
                   <>
-                    <Button sx={{mx:1}} component={Link} href="/" startIcon={<HomeIcon />}>
+                    <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="/" startIcon={<HomeIcon />}>
                       Home
                     </Button>
-                    <Button sx={{mx:1}} component={Link} href="gallery" startIcon={<CameraRollIcon />}>
+                    <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="gallery" startIcon={<CameraRollIcon />}>
                       Gallery
                     </Button>
-                    <Button sx={{mx:1}} component={Link} href="pricing" startIcon={<SellIcon />}>
+                    <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="pricing" startIcon={<SellIcon />}>
                       Pricing
                     </Button>
-                    <Button sx={{mx:1}} component={Link} href="about" startIcon={<InfoIcon />}>
+                    <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="about" startIcon={<InfoIcon />}>
                       About
                     </Button>
                     {eventComing ?
-                        <Button sx={{mx:1}} component={Link} href="events" startIcon={<EventIcon />}>
+                        <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="events" startIcon={<EventIcon />}>
                           Events
                         </Button>
                         :
@@ -134,7 +141,7 @@ export default function App({ Component, pageProps }) {
           </Toolbar>
         </AppBar>
           <Box component="main"
-            sx={{p: 1, width:'100%', backgroundColor: '#e6f2ee'}}>
+            sx={{p: 1, width:'100%'}}>
             <Toolbar/>
             <Component {...pageProps} />
           </Box>

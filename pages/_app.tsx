@@ -26,15 +26,15 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import EventIcon from '@mui/icons-material/Event';
-import {eventComing} from "./index";
+import { eventComing } from "./index";
 import HomeIcon from '@mui/icons-material/Home';
-import {RecoilRoot} from "recoil";
+import { RecoilRoot } from "recoil";
 import Image from 'next/image'
 import SellIcon from '@mui/icons-material/Sell';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
-    props,
-    ref,
+  props,
+  ref,
 ) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -82,71 +82,70 @@ export default function App({ Component, pageProps }) {
   };
   return (
     <>
-    <RecoilRoot>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <AppBar component="nav" elevation={5} variant='outlined' sx={{backgroundColor:'background.paper', color:'primary.main'}}>
-          <Toolbar variant='dense'>
-            <Image
+      <RecoilRoot>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <AppBar component="nav" elevation={5} variant='outlined' sx={{ backgroundColor: 'background.paper', color: 'primary.main' }}>
+            <Toolbar variant='dense'>
+              <Image
                 height='30'
                 width='30'
                 src='/images/logo.png'
                 alt='logo'
                 loading="lazy"
-            />
-            <Typography
+              />
+              <Typography
                 variant="h6"
                 component="div"
-                sx={{fontWeight: '200', flexGrow: 1, ml:0.5}}
-            >
-              photos
-            </Typography>
-            <Box sx={bigger ? {display:'flex'} : null}>
-              {bigger ?
+                sx={{ fontWeight: '200', flexGrow: 1, ml: 0.5 }}
+              >
+                photos
+              </Typography>
+              <Box sx={bigger ? { display: 'flex' } : null}>
+                {bigger ?
                   <>
-                    <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="/" startIcon={<HomeIcon />}>
+                    <Button color='inherit' variant='text' sx={{ mx: 1 }} component={Link} href="/" startIcon={<HomeIcon />}>
                       Home
                     </Button>
-                    <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="gallery" startIcon={<CameraRollIcon />}>
+                    <Button color='inherit' variant='text' sx={{ mx: 1 }} component={Link} href="gallery" startIcon={<CameraRollIcon />}>
                       Gallery
                     </Button>
-                    <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="pricing" startIcon={<SellIcon />}>
+                    <Button color='inherit' variant='text' sx={{ mx: 1 }} component={Link} href="pricing" startIcon={<SellIcon />}>
                       Pricing
                     </Button>
-                    <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="about" startIcon={<InfoIcon />}>
+                    <Button color='inherit' variant='text' sx={{ mx: 1 }} component={Link} href="about" startIcon={<InfoIcon />}>
                       About
                     </Button>
                     {eventComing ?
-                        <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="events" startIcon={<EventIcon />}>
-                          Events
-                        </Button>
-                        :
-                        null}
+                      <Button color='inherit' variant='text' sx={{ mx: 1 }} component={Link} href="events" startIcon={<EventIcon />}>
+                        Events
+                      </Button>
+                      :
+                      null}
 
                   </>
                   :
                   <>
                     <IconButton
-                        sx={{alignSelf: 'flex-end'}}
-                        aria-controls={openMenu ? 'basic-menu' : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={openMenu ? 'true' : undefined}
-                        onClick={handleOpenMenu}
+                      sx={{ alignSelf: 'flex-end' }}
+                      aria-controls={openMenu ? 'basic-menu' : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={openMenu ? 'true' : undefined}
+                      onClick={handleOpenMenu}
                     >
-                      <MenuIcon/>
+                      <MenuIcon />
                     </IconButton>
                   </>
-              }
-            </Box>
-          </Toolbar>
-        </AppBar>
-          <Box component="main"
-            sx={{p: 1, width:'100%'}}>
-            <Toolbar/>
+                }
+              </Box>
+            </Toolbar>
+          </AppBar>
+          <Box component="main" sx={{ p: 1, width: '100%' }}>
+            <Toolbar />
             <Component {...pageProps} />
           </Box>
-        <Lightbox/>
-        <Menu
+          <Lightbox />
+          <Menu
             id="basic-menu"
             anchorEl={anchorEl}
             open={openMenu}
@@ -154,40 +153,40 @@ export default function App({ Component, pageProps }) {
             MenuListProps={{
               'aria-labelledby': 'basic-button',
             }}
-        >
-          <MenuItem onClick={handleCloseMenu} component={Link} href="/">
-            <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon>
-            <ListItemText>
-              Home
-            </ListItemText>
-          </MenuItem>
-          <MenuItem onClick={handleCloseMenu} component={Link} href="gallery">
-            <ListItemIcon>
-              <CameraRollIcon />
-            </ListItemIcon>
-            <ListItemText>
-              Gallery
-            </ListItemText>
-          </MenuItem>
-          <MenuItem onClick={handleCloseMenu} component={Link} href="pricing">
-            <ListItemIcon>
-              <SellIcon />
-            </ListItemIcon>
-            <ListItemText>
-              Pricing
-            </ListItemText>
-          </MenuItem>
-          <MenuItem onClick={handleCloseMenu} component={Link} href="about">
-            <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText>
-              About
-            </ListItemText>
-          </MenuItem>
-          {eventComing ?
+          >
+            <MenuItem onClick={handleCloseMenu} component={Link} href="/">
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText>
+                Home
+              </ListItemText>
+            </MenuItem>
+            <MenuItem onClick={handleCloseMenu} component={Link} href="gallery">
+              <ListItemIcon>
+                <CameraRollIcon />
+              </ListItemIcon>
+              <ListItemText>
+                Gallery
+              </ListItemText>
+            </MenuItem>
+            <MenuItem onClick={handleCloseMenu} component={Link} href="pricing">
+              <ListItemIcon>
+                <SellIcon />
+              </ListItemIcon>
+              <ListItemText>
+                Pricing
+              </ListItemText>
+            </MenuItem>
+            <MenuItem onClick={handleCloseMenu} component={Link} href="about">
+              <ListItemIcon>
+                <InfoIcon />
+              </ListItemIcon>
+              <ListItemText>
+                About
+              </ListItemText>
+            </MenuItem>
+            {eventComing ?
               <MenuItem onClick={handleCloseMenu} component={Link} href="events">
                 <ListItemIcon>
                   <EventIcon />
@@ -197,17 +196,17 @@ export default function App({ Component, pageProps }) {
                 </ListItemText>
               </MenuItem>
               : null
-          }
+            }
 
-        </Menu>
-        <Snackbar open={openSnack} autoHideDuration={6000} onClose={handleCloseSnack}>
-          <Alert onClose={handleCloseSnack} severity="info" sx={{ width: '100%' }}>
-            Hey, there's a headshot event coming up on May 27th!
-            <Button sx={{mx:1}} color='inherit' variant='outlined' size='small' component={Link} href="events">CLICK HERE</Button>
-            to learn more!
-          </Alert>
-        </Snackbar>
-      </ThemeProvider>
+          </Menu>
+          <Snackbar open={openSnack} autoHideDuration={6000} onClose={handleCloseSnack}>
+            <Alert onClose={handleCloseSnack} severity="info" sx={{ width: '100%' }}>
+              Hey, there's a headshot event coming up on May 27th!
+              <Button sx={{ mx: 1 }} color='inherit' variant='outlined' size='small' component={Link} href="events">CLICK HERE</Button>
+              to learn more!
+            </Alert>
+          </Snackbar>
+        </ThemeProvider>
       </RecoilRoot>
     </>
   );
